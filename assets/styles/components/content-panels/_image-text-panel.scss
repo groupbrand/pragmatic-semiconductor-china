@@ -1,0 +1,212 @@
+&__image-text-panel {
+  position: relative;
+
+  // This is specific to the home page so that it goes under video.
+  margin-top: to-rem(-10) !important;
+  padding-bottom: 0;
+
+  // Overrides panel - just so there is fractionally more padding on top - so the scroll to content on home page is not obscurred or medium snap point.
+  padding: to-rem(100) to-rem(0);
+
+  @include bp(wide) {
+    padding: to-rem(130) 0;
+  }
+
+  // @include bp(lap) {
+  //   padding-bottom: 80px;
+  // }
+
+  @include bp(wide) {
+    padding-bottom: 128px;
+  }
+
+  .home-intro {
+    h2.section-title {
+      font-size: to-rem(44);
+      @include lhCrop(44);
+      font-weight: 400;
+      line-height: to-rem(47);
+      margin: 0;
+
+      @include bp(lap) {
+        font-size: to-rem(54);
+        @include lhCrop(54);
+        line-height: to-rem(58);
+        max-width: 80%;
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(64);
+        @include lhCrop(64);
+        line-height: to-rem(68);
+        max-width: 1147px;
+      }
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      padding-bottom: 60px;
+      @include bp(wide) {
+        padding-bottom: 100px;
+      }
+
+      // This margin is slightly smaller than gap below as text has a small margin at bottom.
+      margin-top: 72px;
+      @include bp(1150px) {
+        margin-top: 80px;
+
+        @include bp(wide) {
+          margin-top: 110px;
+        }
+      }
+
+      @include bp(850px) {
+        display: flex;
+        flex-direction: row;
+
+        gap: 80px;
+        @include bp(wide) {
+          gap: 130px;
+        }
+
+        position: relative;
+        z-index: 2;
+        padding-bottom: initial;
+      }
+    }
+
+    &__image {
+      order: 2;
+      margin-bottom: 120px;
+
+      img {
+        display: block;
+        width: 435px;
+        max-width: 100%;
+        aspect-ratio: 435 / 543;
+        object-fit: cover;
+        object-position: center;
+        border-radius: $border-radius-lg;
+        max-width: 270px;
+        @include bp(600px) {
+          max-width: 150px;
+        }
+
+        @include bp(850px) {
+          max-width: 270px;
+        }
+
+        @include bp(1150px) {
+          max-width: unset;
+        }
+      }
+
+      @include bp(850px) {
+        order: 1;
+        margin-bottom: initial;
+      }
+    }
+
+    &__content {
+      position: relative;
+      flex: 1;
+      order: 1;
+
+      @include bp(1150px) {
+        order: 2;
+      }
+
+      .section-introduction {
+        font-size: to-rem(26);
+        line-height: to-rem(33);
+        margin-bottom: 30px;
+
+        @include bp(desk) {
+          font-size: to-rem(32);
+          line-height: to-rem(40);
+          margin-bottom: 30px;
+        }
+        font-weight: 400;
+      }
+
+      .section-content {
+        font-size: to-rem(17);
+        line-height: to-rem(25);
+        margin-bottom: 40px;
+
+        @include bp(850px) {
+          margin-bottom: 200px;
+        }
+        @include bp(1150px) {
+          font-size: to-rem(24);
+          line-height: to-rem(32);
+          margin-bottom: 0px;
+        }
+        font-weight: 400;
+      }
+
+      .overlay-image {
+        display: none;
+
+        @include bp(1150px) {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          margin-top: 40px;
+          top: 60px;
+          left: -125px;
+
+          overflow: hidden;
+
+          img {
+            display: block;
+            border-radius: $border-radius-lg;
+            width: 208px;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay-panel {
+    background-color: getcolor("floral-white");
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // Note this should match panel headings
+    height: 80px;
+    @include bp(lap) {
+      height: 130px;
+    }
+    margin-left: 8px;
+    margin-right: 8px;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+    z-index: 1;
+
+    &__floating-image {
+      position: absolute;
+      top: -40px;
+      right: 25px;
+      width: 120px;
+      transform: translateY(-50px);
+
+      img {
+        display: block;
+        object-fit: cover;
+        object-position: right;
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-lg;
+      }
+
+      @include bp(1150px) {
+        display: none;
+      }
+    }
+  }
+}

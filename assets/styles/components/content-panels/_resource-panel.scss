@@ -1,0 +1,139 @@
+&__resource-panel {
+  h2.meta-heading {
+    color: getcolor("charcoal-grey");
+  }
+
+  h3.section-title-small {
+    margin: 0 0 40px;
+    @include bp(wide) {
+      margin: 0 0 80px;
+    }
+  }
+
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__col {
+      width: 100%;
+
+      .resources-container {
+        @include bp(lap) {
+          display: flex;
+          gap: 65px;
+          flex-wrap: wrap;
+        }
+      }
+
+      .resource-item {
+        display: flex;
+        flex-direction: column;
+
+        flex: 25.333%;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(54, 69, 79, 0.15);
+        margin-bottom: 56px;
+
+        &:hover {
+          border-bottom: 1px solid getcolor("charcoal-grey");
+          transition: border-bottom 500ms ease-in-out;
+        }
+
+        @include bp(desk) {
+          margin-bottom: initial;
+        }
+
+        .button-container {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: auto;
+
+          span {
+            color: getcolor("charcoal-grey");
+            font-size: to-rem(12);
+            line-height: to-rem(14.4);
+          }
+        }
+
+        p.description {
+          font-size: to-rem(21);
+          line-height: to-rem(28);
+          padding: 0 0 32px;
+          margin: 0;
+          font-weight: 400;
+
+          @include bp(wide) {
+            font-size: to-rem(24);
+            line-height: to-rem(32);
+          }
+        }
+      }
+    }
+  }
+
+  &.bgc-charcoal-grey {
+    h2.meta-heading {
+      color: getcolor("white");
+    }
+
+    h3.section-title-small {
+      color: getcolor("white");
+    }
+
+    .content-container {
+      &__col {
+        .resource-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+          &:hover {
+            border-bottom: 1px solid getcolor("white");
+            transition: border-bottom 500ms ease-in-out;
+          }
+
+          .button-container {
+            span {
+              color: getcolor("white");
+            }
+
+            //background-color: red;
+
+            .circle-button {
+              background-color: getcolor("charcoal-grey");
+              border: solid 1px getcolor("white");
+
+              &--arrow-right {
+                box-sizing: border-box;
+                &::after {
+                  background: url("../images/icons/icon-right-arrow-large-white.svg")
+                    no-repeat center center;
+                }
+              }
+
+              &--arrow-external-link {
+                box-sizing: border-box;
+                &::after {
+                  background: url("../images/icons/icon-external-link-white.svg")
+                    no-repeat center center;
+                }
+              }
+
+              &--arrow-download {
+                box-sizing: border-box;
+                &::after {
+                  background: url("../images/icons/icon-down-arrow-white.svg")
+                    no-repeat center center;
+                }
+              }
+            }
+          }
+
+          p.description {
+            color: getcolor("white");
+          }
+        }
+      }
+    }
+  }
+}

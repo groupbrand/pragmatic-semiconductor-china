@@ -1,0 +1,23 @@
+&__post-article-related-articles {
+  h2 {
+  }
+  .articles-container {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include bp(desk) {
+      max-width: unset;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    &__col {
+      margin-bottom: 40px;
+      @include bp(lap) {
+        flex: 0 0 33.33%;
+      }
+    }
+  }
+}

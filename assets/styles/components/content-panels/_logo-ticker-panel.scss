@@ -1,0 +1,42 @@
+&__logo-ticker-panel {
+  .container {
+    // overriding standard padding
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: unset !important;
+  }
+
+  .logo-ticker {
+    width: 100%;
+    overflow: hidden;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      gap: 84px;
+
+      animation: ticker-logo 40s linear infinite;
+      width: fit-content;
+    }
+
+    &__item {
+      white-space: nowrap;
+      list-style-type: none;
+
+      img {
+        display: block;
+        width: auto;
+        height: 70px;
+        max-width: 150px;
+        object-fit: contain;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @keyframes ticker-logo {
+    to {
+      transform: translate(calc(-50% - 1.625rem));
+    }
+  }
+}

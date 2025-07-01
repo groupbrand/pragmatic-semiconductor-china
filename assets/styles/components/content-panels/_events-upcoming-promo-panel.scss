@@ -1,0 +1,200 @@
+&__events-upcoming-promo-panel {
+  h3.section-title-small {
+    max-width: 500px;
+    margin-bottom: 50px;
+    @include bp(wide) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .content-container {
+    @include bp(1200px) {
+      @include flex-columns(16, 3);
+    }
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid getcolor("charcoal-grey");
+      border-radius: $border-radius-lg;
+
+      margin-bottom: to-rem(16);
+      padding: 20px;
+      @include bp(wide) {
+        padding: 40px;
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        margin-bottom: initial;
+      }
+
+      @include bp(1200px) {
+        flex: 1 1 18.33%;
+        //max-width: 33.33%;
+        min-height: 100%;
+        margin-bottom: initial;
+      }
+
+      h3.subheading {
+        margin-top: 24px;
+        @include bp(wide) {
+          margin-top: 32px;
+        }
+      }
+    }
+
+    .button-container {
+      margin-top: auto;
+    }
+  }
+
+  // &.bgc-floral-white {
+  //   .button--arrow-open-link {
+  //     color: getcolor("floral-white");
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-floral-white.svg")
+  //         no-repeat center center;
+  //       height: 15px;
+  //       width: 15px;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover {
+  //       color: getcolor("floral-white");
+  //       &:before {
+  //         background-color: getcolor("floral-white");
+  //         border: 1px solid getcolor("floral-white");
+  //       }
+
+  //       &:after {
+  //         background: url("../images/icons/icon-external-link-black.svg")
+  //           no-repeat center center;
+
+  //         height: 15px;
+  //         width: 15px;
+  //         background-size: contain;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // &.bgc-pale-yellow {
+  //   // Arrow Right
+  //   a.button--arrow-right {
+  //     color: getcolor("pale-yellow");
+
+  //     &::before {
+  //       border: 1px solid getcolor("pale-yellow");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("pale-yellow");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-pale-yellow.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   .button--arrow-open-link {
+  //     color: getcolor("pale-yellow");
+  //     &::before {
+  //       border: 1px solid getcolor("pale-yellow");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-pale-yellow.svg")
+  //         no-repeat center center;
+  //       height: 15px;
+  //       width: 15px;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover {
+  //       color: getcolor("pale-yellow");
+  //       &:before {
+  //         background-color: getcolor("pale-yellow");
+  //         border: 1px solid getcolor("pale-yellow");
+  //       }
+
+  //       &:after {
+  //         background: url("../images/icons/icon-external-link-black.svg")
+  //           no-repeat center center;
+
+  //         height: 15px;
+  //         width: 15px;
+  //         background-size: contain;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // &.bgc-floral-white {
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // Arrow Right
+  //   a.button--arrow-right {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+  // }
+}

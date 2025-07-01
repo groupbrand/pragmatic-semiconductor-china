@@ -1,0 +1,253 @@
+$main-container-snap: 1000px;
+
+$super-large-image-width: 450px;
+$super-large-image-height: 546px;
+
+$large-image-width: 375px;
+$large-image-height: 455px;
+
+$small-image-width: 250px;
+$small-image-height: 303px;
+
+&__internal-hero-image-panel {
+  position: relative;
+  box-sizing: border-box;
+  z-index: -1;
+
+  padding-top: $hero-padding-top-mobile;
+
+  padding-bottom: 80px;
+
+  @include bp(lap) {
+    padding-bottom: 80px;
+    padding-top: $hero-padding-top-lap;
+  }
+
+  @include bp(wide) {
+    padding-bottom: 130px;
+    padding-top: $hero-padding-top;
+  }
+
+  position: relative;
+  .bg-dots {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    background-image: url("../images/decorators/header-pattern-mobile.webp");
+    width: 375px;
+    aspect-ratio: 0.52/1;
+
+    @include bp(lap) {
+      background-image: url("../images/decorators/header-pattern.webp");
+      width: 1500px;
+      aspect-ratio: 1/0.93;
+    }
+  }
+
+  overflow: hidden;
+
+  .content-container {
+    margin-bottom: $small-image-height;
+
+    &.no-image {
+      margin-bottom: 0;
+    }
+
+    @include bp($main-container-snap) {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    position: relative;
+    z-index: 2;
+
+    &__col1 {
+      @include bp($main-container-snap) {
+        flex: 1 1 auto;
+      }
+
+      h2.page-hero-title {
+        padding-bottom: 32px;
+        max-width: 900px;
+        word-break: break-word;
+        @include bp($main-container-snap) {
+          padding-bottom: 0;
+          word-break: initial;
+          margin-bottom: 80px;
+        }
+
+        @include bp(wide) {
+          margin-bottom: 130px; //(150 - 20px tweak for font)
+        }
+      }
+    }
+
+    &__col2 {
+      @include bp($main-container-snap) {
+        flex: 0 0 400px;
+      }
+    }
+  }
+
+  .image-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 80px;
+    @include bp(wide) {
+      bottom: 130px;
+    }
+    width: 100%;
+
+    .container {
+      position: relative;
+      bottom: 0;
+
+      height: $small-image-height;
+      @include bp($main-container-snap) {
+        height: $large-image-height;
+      }
+
+      .margin-spacer-container {
+        position: relative;
+        height: 100%;
+      }
+
+      // Static Image
+      .image-inner-container {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: $small-image-width;
+        height: $small-image-height;
+        margin: 0 auto;
+        @include bp($main-container-snap) {
+          width: $large-image-width;
+          height: $large-image-height;
+          margin-left: unset;
+          margin-right: unset;
+          left: unset;
+        }
+
+        @include bp(wide) {
+          width: $super-large-image-width;
+          height: $super-large-image-height;
+        }
+
+        display: block;
+
+        img {
+          display: block;
+          width: 100%;
+          max-width: 400px;
+        }
+      }
+
+      //Slider Images
+
+      .internal-hero-slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+
+        &__slides-wrapper {
+          display: block;
+        }
+
+        &__slides {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          display: flex;
+          transition-property: transform;
+          transition-timing-function: var(
+            --swiper-wrapper-transition-timing-function,
+            initial
+          );
+          box-sizing: content-box;
+        }
+
+        &__slide {
+          flex-shrink: 0;
+          display: block;
+          img {
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            max-width: unset;
+
+            width: $small-image-width;
+            height: $small-image-height;
+            margin: 0 auto;
+            @include bp($main-container-snap) {
+              width: $large-image-width;
+              height: $large-image-height;
+              margin-left: unset;
+              margin-right: unset;
+              left: unset;
+            }
+
+            @include bp(wide) {
+              width: $super-large-image-width;
+              height: $super-large-image-height;
+            }
+
+            line-height: 1;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: getcolor("floral-white");
+    // Note this should match panel headings
+    height: 80px;
+
+    @include bp(wide) {
+      height: 130px;
+    }
+    margin: 0 8px 0 8px;
+    border-top-right-radius: $border-radius-lg;
+    border-top-left-radius: $border-radius-lg;
+    transform: translateY(2px);
+  }
+
+  &.bgc-charcoal-grey {
+    .content-container {
+      h1.meta-heading {
+        color: getcolor("medium-gray");
+      }
+
+      h2.page-hero-title {
+        color: getcolor("medium-gray");
+      }
+    }
+  }
+}
+
+@keyframes fader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

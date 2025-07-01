@@ -1,0 +1,101 @@
+&__three-column-panel {
+  .content-container {
+    @include bp(1150px) {
+      @include flex-columns(46, 3);
+    }
+
+    &__col {
+      // This margin is left as 80 so that it leaves a space when this panel is combined with column image panel.
+      margin-bottom: 64px;
+
+      @include bp(lap) {
+        margin-bottom: 100px;
+      }
+
+      @include bp(wide) {
+        margin-bottom: 150px;
+      }
+
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+
+      h2.section-title-small {
+        margin-bottom: 16px;
+        @include bp(wide) {
+          margin-bottom: 32px;
+        }
+      }
+
+      p {
+        margin: 0 0 32px;
+        max-width: 600px;
+        @include bp(1150px) {
+          max-width: 400px;
+          margin: 0 0 40px;
+        }
+      }
+    }
+
+    .button-container {
+      margin-top: auto;
+    }
+  }
+
+  // Colour Overrides
+
+  // &.bgc-floral-white {
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // Arrow Right
+  //   a.button--arrow-right {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+  // }
+}

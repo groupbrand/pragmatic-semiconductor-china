@@ -1,0 +1,129 @@
+&__intro-panel {
+  position: relative;
+  z-index: 2;
+
+  .content {
+    h2 {
+      max-width: 100%;
+      @include bp(600px) {
+        padding-right: 10%;
+      }
+
+      @include bp(851px) {
+        // This is the default that can be overriden
+        max-width: 851px;
+        padding-right: 100px;
+      }
+
+      @include bp(1100px) {
+        padding-right: 0;
+      }
+      margin-bottom: 0;
+    }
+
+    .introduction {
+      max-width: 100%;
+      @include bp(600px) {
+        padding-right: 10%;
+      }
+
+      @include bp(851px) {
+        // This is the default that can be overriden
+        max-width: 851px;
+        padding-right: 100px;
+      }
+
+      @include bp(1100px) {
+        padding-right: 0;
+      }
+
+      margin: 0;
+
+      font-size: to-rem(26);
+      @include lhCrop(26);
+      line-height: to-rem(33);
+
+      @include bp(lap) {
+        font-size: to-rem(28);
+        @include lhCrop(28);
+        line-height: to-rem(35);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(32);
+        @include lhCrop(32);
+        line-height: to-rem(40);
+      }
+    }
+
+    // Used for space between title and intro
+    .with-intro-margin {
+      margin-bottom: 40px;
+      @include bp(lap) {
+        margin-bottom: 55px;
+      }
+    }
+
+    // Used for space title, or intro and button
+    .with-margin {
+      margin-bottom: 44px;
+      @include bp(lap) {
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  // &.bgc-floral-white {
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // Arrow Right
+  //   a.button--arrow-right {
+  //     color: getcolor("floral-white");
+
+  //     &::before {
+  //       border: 1px solid getcolor("floral-white");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("floral-white");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-floral-white.svg")
+  //         no-repeat center center;
+
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+  // }
+}

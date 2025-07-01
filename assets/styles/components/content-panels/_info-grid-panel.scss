@@ -1,0 +1,122 @@
+&__info-grid-panel {
+  overflow-x: hidden;
+  .content-container {
+    h2.section-title-medium {
+      margin-bottom: 64px;
+      @include bp(lap) {
+        max-width: 859px;
+        margin-bottom: 45px;
+      }
+    }
+
+    &__img-container {
+      display: flex;
+      gap: 11px;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      margin-bottom: 60px;
+
+      @include bp(800px) {
+        margin-bottom: 0;
+        @include flex-columns(16, 3);
+        justify-content: space-between;
+        align-items: flex-start;
+        min-height: 300px;
+      }
+
+      @include bp(1000px) {
+        min-height: 400px;
+      }
+
+      @include bp(1170px) {
+        min-height: 500px;
+      }
+
+      @include bp(1600px) {
+        min-height: 600px;
+        justify-content: center;
+      }
+
+      .img-container {
+        box-sizing: border-box;
+
+        display: block;
+        width: 200px;
+        min-width: 90%;
+        @include bp(420px) {
+          min-width: unset;
+          width: 300px;
+        }
+        height: auto;
+
+        @include bp(lap) {
+          &:nth-child(1) {
+            align-self: flex-end;
+          }
+
+          &:nth-child(2) {
+            align-self: center;
+          }
+        }
+
+        img {
+          object-fit: cover;
+          border-radius: $border-radius-lg;
+          display: block;
+          width: 200px;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &--desktop {
+        display: none;
+        @include bp(420px) {
+          display: flex;
+        }
+      }
+
+      &--mobile {
+        .mobile-image__slides {
+          display: flex;
+          gap: 11px;
+        }
+
+        @include bp(420px) {
+          display: none;
+        }
+      }
+    }
+
+    &__details {
+      display: flex;
+
+      &-col1 {
+        display: none;
+
+        @include bp(800px) {
+          display: block;
+          flex: 1;
+        }
+      }
+
+      &-col2 {
+        @include bp(800px) {
+          margin-top: initial;
+        }
+
+        .wysiwyg-container p {
+          margin-top: 0;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        flex: 1;
+      }
+    }
+  }
+}

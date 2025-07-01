@@ -1,0 +1,832 @@
+// Buttons V2
+
+// There are the following button permations;
+
+// Icons
+// - Right Arrow
+// - Left Arrow
+// - Plus
+// - External Link
+// - Download
+
+// Other Panels also create variations of panels for specific panel Bgs.
+
+// Usage:
+// buttonV2 buttonV2--icon buttonV2--icon--arrow-right
+// buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--arrow-right
+// buttonV2 buttonV2--icon buttonV2--icon--arrow-right buttonV2--black-yellow
+
+$desktop_icon_size: 38px;
+$mobile_icon_size: 28px;
+
+button.buttonV2,
+a.buttonV2,
+div.buttonV2 {
+  position: relative;
+  padding: 11px 20px 12px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  font-size: to-rem(16);
+  font-weight: 400;
+  border-radius: 30px;
+  background-color: getcolor("charcoal-grey");
+
+  @include bp($button_transition_width) {
+    transition: all 200ms ease-in-out;
+  }
+
+  color: getcolor("white");
+  border: none;
+  cursor: pointer;
+
+  // For standard button without icon
+  &--yellow {
+    background-color: getcolor("yellow");
+    color: getcolor("black");
+
+    &:hover {
+      background-color: getcolor("black");
+      color: getcolor("white");
+    }
+  }
+
+  &--yellow-contact {
+    background-color: getcolor("yellow");
+    color: getcolor("black");
+    padding: 13px 20px 14px;
+    font-size: to-rem(18);
+
+    &:hover {
+      background-color: getcolor("black");
+      color: getcolor("white");
+    }
+  }
+
+  /// Tall
+  &--tall {
+    padding: 11px 20px 12px;
+
+    @include bp(lap) {
+      padding: 18px 20px 19px;
+    }
+  }
+
+  // Default Icon is black background with white text
+  &--icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 12px;
+    padding: 7px 20px 8px 8px;
+    @include bp($button_transition_width) {
+      padding: 8px 20px 8px 8px;
+    }
+
+    // The before element holds the circle
+    &::before {
+      content: "";
+      align-self: center;
+      width: $desktop_icon_size;
+      height: $desktop_icon_size;
+      border-radius: 50%;
+      border: solid 1px getcolor("white");
+      box-sizing: border-box;
+
+      // This margin top works with the padding adjustment above for mobile, so that the text can be moved up 1px and the icon moved down so that does
+      // is still centered.
+      margin-top: 1px;
+      @include bp($button_transition_width) {
+        margin-top: 0px;
+        transition: all 100ms ease-in-out;
+      }
+    }
+
+    position: relative;
+
+    // The after element holds the icon
+    &::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: $desktop_icon_size;
+      height: $desktop_icon_size;
+      border-radius: 50%;
+      // No mask icon defined by default
+      mask-size: contain;
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("white");
+      @include bp($button_transition_width) {
+        transition: background-color 300ms ease-in-out;
+      }
+    }
+
+    // Change and icon
+    &:hover::after {
+      //background: black; //getcolor("black");
+      // mask-image: url("../images/iconsv2/new-arrow-right-white-38.svg");
+      mask-size: contain;
+
+      // Note: The transition on the image creates the flicker on safari
+      @include bp($button_transition_width) {
+        transition: background 300ms ease-in-out;
+      }
+    }
+
+    &--arrow-right {
+      // The after element holds the icon
+      &::after {
+        background: getcolor("white");
+        mask-image: url("../images/iconsv2/new-arrow-right-white-38.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-arrow-right-white-38.svg");
+      }
+    }
+
+    &--plus {
+      // The after element holds the icon
+      &::after {
+        background: getcolor("white");
+        mask-image: url("../images/iconsv2/new-plus-white-38.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-plus-white-38.svg");
+      }
+    }
+
+    &--download {
+      // The after element holds the icon
+      &::after {
+        background: getcolor("white");
+        mask-image: url("../images/iconsv2/new-arrow-download-38.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-arrow-download-38.svg");
+      }
+    }
+
+    &--external-link {
+      // The after element holds the icon
+      &::after {
+        background: getcolor("white");
+        mask-image: url("../images/iconsv2/new-external-link-white-38.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-external-link-white-38.svg");
+      }
+    }
+
+    // Small variations of buttons
+
+    &--small {
+      &::before {
+        width: $mobile_icon_size;
+        height: $mobile_icon_size;
+      }
+
+      &::after {
+        width: $mobile_icon_size;
+        height: $mobile_icon_size;
+      }
+
+      &:hover::after {
+        width: $mobile_icon_size;
+        height: $mobile_icon_size;
+      }
+
+      &--arrow-right {
+        // The after element holds the icon
+        &::after {
+          background: getcolor("white");
+          mask-image: url("../images/iconsv2/new-arrow-right-white-28.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-arrow-right-white-28.svg");
+        }
+      }
+
+      &--plus {
+        // The after element holds the icon
+        &::after {
+          background: getcolor("white");
+          mask-image: url("../images/iconsv2/new-plus-white-28.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-plus-white-28.svg");
+        }
+      }
+
+      &--download {
+        // The after element holds the icon
+        &::after {
+          background: getcolor("white");
+          mask-image: url("../images/iconsv2/new-plus-white-38.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-plus-white-38.svg");
+        }
+      }
+
+      &--external-link {
+        // The after element holds the icon
+        &::after {
+          background: getcolor("white");
+          mask-image: url("../images/iconsv2/new-external-link-white-28.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-external-link-white-28.svg");
+        }
+      }
+    }
+  }
+
+  // Colour Overrides
+
+  &--black-yellow {
+    color: getcolor("yellow");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("yellow");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("yellow");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("yellow");
+    }
+  }
+
+  &--black-turquoise {
+    color: getcolor("turquoise");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("turquoise");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("turquoise");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("turquoise");
+    }
+  }
+
+  &--black-floral-white {
+    color: getcolor("floral-white");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("floral-white");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("floral-white");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("floral-white");
+    }
+  }
+
+  &--black-grey {
+    color: getcolor("grey");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("grey");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("grey");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("grey");
+    }
+  }
+
+  &--black-purple {
+    color: getcolor("purple");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("purple");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("purple");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("purple");
+    }
+  }
+
+  &--black-salmon {
+    color: getcolor("salmon");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("salmon");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("salmon");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("salmon");
+    }
+  }
+
+  &--black-pale-yellow {
+    color: getcolor("pale-yellow");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("pale-yellow");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("pale-yellow");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("pale-yellow");
+    }
+  }
+
+  &--yellow-black {
+    background-color: getcolor("yellow");
+    color: getcolor("black");
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("black");
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("black");
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("black");
+    }
+
+    // Change circle and background colour
+    &:hover::after {
+      background: getcolor("yellow");
+    }
+  }
+
+  &--yellow-black-important {
+    background-color: getcolor("yellow") !important;
+    color: getcolor("black") !important;
+
+    // The before element holds the circle
+    &::before {
+      border: solid 1px getcolor("black") !important;
+    }
+
+    // The after element holds the icon
+    &::after {
+      background: getcolor("black") !important;
+    }
+
+    // Change circle and background colour
+    &:hover::before {
+      background-color: getcolor("black") !important;
+    }
+
+    // Change circle and background colour
+    &:hover::after {
+      background: getcolor("yellow") !important;
+    }
+  }
+}
+
+// Panel Colours Overrides
+
+.content,
+.content-container__col1,
+.content-container__col2,
+.events-lister-container__col3 {
+  &.bgc-floral-white {
+    .buttonV2 {
+      color: getcolor("floral-white");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("floral-white");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("floral-white");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("floral-white");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-purple {
+    .buttonV2 {
+      color: getcolor("purple");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("purple");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("purple");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("purple");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-salmon {
+    .buttonV2 {
+      color: getcolor("salmon");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("salmon");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("salmon");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("salmon");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-green {
+    .buttonV2 {
+      color: getcolor("green");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("green");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("green");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("green");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-grey {
+    .buttonV2 {
+      color: getcolor("grey");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("grey");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("grey");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("grey");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-orange {
+    .buttonV2 {
+      color: getcolor("orange");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("orange");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("orange");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("orange");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-steel-blue {
+    .buttonV2 {
+      color: getcolor("steel-blue");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("steel-blue");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("steel-blue");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("steel-blue");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-turquoise {
+    .buttonV2 {
+      color: getcolor("turquoise");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("turquoise");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("turquoise");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("turquoise");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-yellow {
+    .buttonV2 {
+      color: getcolor("yellow");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("yellow");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("yellow");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("yellow");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  &.bgc-pale-yellow {
+    .buttonV2 {
+      color: getcolor("pale-yellow");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("pale-yellow");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("pale-yellow");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("pale-yellow");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  // Note this has not been implemented globally as there are panels with backgrounds and inset panels where this breaks. These are handled specifically below in panel overrides
+  &.bgc-charcoal-grey {
+    .buttonV2 {
+      color: getcolor("white");
+      //   border: solid 1px getcolor("white");
+
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("white");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("white");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("white");
+      }
+
+      &:hover::after {
+        background: getcolor("charcoal-grey");
+      }
+    }
+  }
+
+  // Note: This is slightly different to the other panel overrides and may need to be reworked if another panel
+  // needs something different.
+  &.bgc-pale-yellow1 {
+    .buttonV2 {
+      color: getcolor("charcoal-grey");
+      background-color: getcolor("pale-yellow1");
+      border: solid 1px getcolor("charcoal-grey");
+      // The before element holds the circle
+      &::before {
+        border: solid 1px getcolor("charcoal-grey");
+      }
+
+      // The after element holds the icon
+      &::after {
+        background: getcolor("charcoal-grey");
+      }
+
+      // Change circle and background colour
+      &:hover::before {
+        background-color: getcolor("charcoal-grey");
+      }
+
+      &:hover::after {
+        background: getcolor("pale-yellow1");
+      }
+    }
+  }
+}
+
+//
+// Panel Text Hover Overrides
+//
+
+.content__events-upcoming-lister-panel {
+  .events-lister-container {
+    &:hover {
+      .events-lister-container__col3 {
+        > .buttonV2--icon--small--arrow-right {
+          &::before {
+            background-color: getcolor("charcoal-grey");
+          }
+          &::after {
+            background: getcolor("pale-yellow1");
+          }
+        }
+
+        > .buttonV2--icon--small--external-link {
+          &::before {
+            background-color: getcolor("charcoal-grey");
+          }
+          &::after {
+            background: getcolor("pale-yellow1");
+          }
+        }
+      }
+    }
+  }
+}
+
+.content__events-lister-panel {
+  .posts-search {
+    .buttonV2 {
+      color: getcolor("white");
+      border: solid 1px getcolor("white");
+    }
+  }
+  .posts-search__post-results {
+    .events-lister-container {
+      .buttonV2 {
+        color: getcolor("white");
+        border: solid 1px getcolor("white");
+      }
+
+      @include bp(lap) {
+        &:hover {
+          .events-lister-container__col3 {
+            > .buttonV2--icon--small--arrow-right {
+              &::before {
+                background-color: getcolor("white");
+              }
+              &::after {
+                background: getcolor("charcoal-grey");
+              }
+            }
+
+            > .buttonV2--icon--small--external-link {
+              &::before {
+                background-color: getcolor("white");
+              }
+              &::after {
+                background: getcolor("charcoal-grey");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

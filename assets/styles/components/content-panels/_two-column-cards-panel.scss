@@ -1,0 +1,257 @@
+&__two-column-cards-panel {
+  .content-container {
+    @include bp(1000px) {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    // Generic classes across both panels
+    .content-flex {
+      height: 100%;
+
+      @include bp(1000px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      h3.section-title-medium {
+        margin: 0;
+        margin-bottom: 32px;
+        @include bp(desk) {
+          margin-bottom: 40px;
+        }
+      }
+
+      p {
+        display: block;
+
+        font-size: to-rem(21);
+        line-height: to-rem(28);
+        margin: 0 0 40px;
+        max-width: 859px;
+
+        @include bp(desk) {
+          font-size: to-rem(24);
+          line-height: to-rem(32);
+          margin: 0 0 48px;
+          flex: 0 0 auto;
+        }
+      }
+
+      .button-container {
+        flex: 0 0 40px;
+      }
+    }
+
+    &__col1 {
+      background-color: getcolor("turquoise");
+      flex: 1;
+      border-radius: $border-radius-lg;
+      padding: 48px 32px;
+      margin-bottom: 12px;
+
+      @include bp(wide) {
+        padding: 80px;
+      }
+
+      a.buttonV2 {
+        color: getcolor("turquoise");
+
+        &::before {
+          border: 1px solid getcolor("turquoise");
+        }
+
+        &::after {
+          background: getcolor("turquoise");
+        }
+
+        &:hover::before {
+          background-color: getcolor("turquoise");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+        }
+      }
+    }
+
+    &__col2 {
+      background-color: getcolor("yellow");
+      flex: 1;
+      border-radius: $border-radius-lg;
+      padding: 48px 32px;
+      margin-bottom: 12px;
+
+      @include bp(wide) {
+        padding: 80px;
+      }
+
+      // Override button styles
+      a.buttonV2 {
+        color: getcolor("yellow");
+
+        &::before {
+          border: 1px solid getcolor("yellow");
+        }
+
+        &::after {
+          background: getcolor("yellow");
+        }
+
+        &:hover::before {
+          background-color: getcolor("yellow");
+        }
+
+        &:hover::after {
+          background: getcolor("charcoal-grey");
+        }
+      }
+    }
+  }
+
+  .single-column .content-container__col1 {
+    text-align: left;
+    @include bp(lap) {
+      text-align: center;
+    }
+    p {
+      max-width: 823px;
+      margin: 0 auto 40px;
+      @include bp(lap) {
+        margin: 0 auto 48px;
+      }
+    }
+  }
+
+  .button-container {
+    margin-top: auto;
+
+    .hs-cta-embed {
+      height: 56px !important;
+
+      a {
+        img {
+          width: fit-content !important;
+          //  object-fit: contain !important;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(30, 30, 30, 0.8);
+      z-index: 99999;
+      overflow-y: auto;
+
+      display: flex;
+      justify-content: center;
+
+      @include bp(480px) {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include bp(lap) {
+        align-items: center;
+      }
+    }
+
+    &__content {
+      display: block;
+      position: relative;
+      background: getcolor("floral-white");
+      width: 90%;
+      margin: 0 auto;
+      border-radius: $border-radius-lg;
+      height: 100vh;
+      margin: 6px;
+      overflow-y: scroll;
+      box-sizing: border-box;
+      padding: 30px;
+
+      @include bp(480px) {
+        height: 90vh;
+      }
+
+      @include bp(lap) {
+        display: flex;
+        gap: 50px;
+        padding: 64px;
+
+        max-width: 1340px;
+        max-height: none;
+        //overflow-y: visible;
+      }
+
+      @include bp(wide) {
+        padding: 113px;
+      }
+
+      .modal-content-container {
+        width: 100%;
+
+        @include bp(lap) {
+          display: flex;
+          justify-content: space-between;
+        }
+        &__col1 {
+          //border: solid 1px blue;
+          @include bp(lap) {
+            flex: 0 0 40%;
+          }
+
+          h3 {
+            margin: 0 0 32px;
+            @include bp(lap) {
+              margin: 0 0 40px;
+            }
+          }
+
+          p {
+            margin: 0;
+            font-size: to-rem(17);
+            line-height: to-rem(19);
+
+            @include bp(lap) {
+              font-size: to-rem(24);
+              line-height: to-rem(32);
+            }
+          }
+        }
+
+        &__col2 {
+          @include bp(lap) {
+            flex: 0 0 60%;
+          }
+          // border: solid 1px blue;
+          margin-top: 48px;
+          @include bp(lap) {
+            margin-top: 80px;
+          }
+        }
+      }
+
+      .close-button {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        font-size: to-rem(24);
+        background: none;
+        cursor: pointer;
+
+        @include bp(lap) {
+          top: 40px;
+          right: 40px;
+        }
+      }
+    }
+  }
+}

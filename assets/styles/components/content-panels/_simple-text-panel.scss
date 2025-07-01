@@ -1,0 +1,125 @@
+&__simple-text-panel {
+  position: relative;
+
+  .image-decorator {
+    position: absolute;
+    background-image: url("../images/decorators/decorator-shape-grid-white.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 270px;
+    height: 264px;
+
+    @include bp(desk) {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 30vw;
+      height: auto;
+      max-width: 300px;
+      aspect-ratio: 0.977/1;
+    }
+
+    @include bp(wide) {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 30vw;
+      height: auto;
+      max-width: 500px;
+      aspect-ratio: 0.977/1;
+    }
+  }
+  .text-panel {
+    margin-top: 255px;
+    @include bp(lap) {
+      max-width: 850px;
+      margin: 0 auto;
+      padding-left: 240px;
+    }
+
+    @include bp(desk) {
+      padding-left: 18vw;
+    }
+
+    @include bp(wide) {
+      padding-left: 14vw;
+    }
+
+    .wysiwyg-container {
+      h2 {
+        color: getcolor("pale-yellow1");
+        font-size: to-rem(38);
+        @include lhCrop(38);
+        line-height: to-rem(41);
+        margin: 0 0 40px;
+
+        @include bp(wide) {
+          font-size: to-rem(56);
+          @include lhCrop(56);
+          line-height: to-rem(60);
+          margin: 0 0 50px;
+        }
+      }
+
+      h3 {
+        color: getcolor("pale-yellow1");
+        font-size: to-rem(32);
+        @include lhCrop(32);
+        line-height: to-rem(35);
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 16px;
+
+        @include bp(wide) {
+          font-size: to-rem(40);
+          @include lhCrop(40);
+          line-height: to-rem(44);
+          margin-bottom: 16px;
+        }
+      }
+
+      p {
+        color: getcolor("pale-yellow1");
+        font-size: to-rem(17);
+        line-height: to-rem(25);
+        margin-bottom: 40px;
+
+        @include bp(wide) {
+          font-size: to-rem(19);
+          line-height: to-rem(28);
+          margin-bottom: 60px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+      }
+
+      p.introduction {
+        margin: 0;
+        font-size: to-rem(21);
+        line-height: to-rem(28);
+
+        @include bp(wide) {
+          font-size: to-rem(24);
+          line-height: to-rem(32);
+          margin-bottom: 32px;
+        }
+      }
+
+      // This is a specialist class used in the text mode to add more padding where this control has been inluded
+      // on a content page such as foundry simple text panel
+      p.mb-77 {
+        margin-bottom: 67px;
+
+        @include bp(lap) {
+          margin-bottom: 77px;
+        }
+      }
+    }
+  }
+}

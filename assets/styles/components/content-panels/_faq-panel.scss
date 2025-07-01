@@ -1,0 +1,27 @@
+&__faq-panel {
+  h2.section-title-small {
+    margin-bottom: 40px;
+    @include bp(1050px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .content-container {
+    @include bp(1050px) {
+      display: flex;
+    }
+
+    &__col1 {
+      flex: 1;
+      margin-bottom: 50px;
+
+      @include bp(1050px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__col2 {
+      flex: 1.5;
+    }
+  }
+}

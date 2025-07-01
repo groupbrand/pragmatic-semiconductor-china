@@ -1,0 +1,105 @@
+&__column-grid-panel {
+  position: relative;
+  z-index: 3;
+
+  h2.section-title-small {
+    // This is a standard margin when there is a description.
+    margin-bottom: 24px;
+    @include bp(wide) {
+      margin-bottom: 32px;
+    }
+
+    &.larger-margin {
+      margin-bottom: 40px;
+      @include bp(wide) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    span.introduction {
+      display: inline-block;
+      max-width: 720px;
+      margin-bottom: 40px;
+
+      @include bp(wide) {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  .content-container {
+    @include bp(lap) {
+      // Set to 65 as this panel is shared with 1301 page which has a wider gap
+      @include flex-columns(65, 3);
+    }
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 64px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include bp(lap) {
+        margin-bottom: 0;
+      }
+
+      .image-container {
+        display: flex;
+        align-items: flex-end;
+
+        margin-bottom: 32px;
+        @include bp(wide) {
+          margin-bottom: 40px;
+        }
+        height: 103px;
+
+        img {
+          display: block;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+
+      h3 {
+        font-size: to-rem(30);
+        @include lhCrop(30);
+        margin-bottom: 0;
+        @include bp(wide) {
+          font-size: to-rem(40);
+          @include lhCrop(40);
+        }
+
+        &.with-margin {
+          margin-bottom: 24px;
+          @include bp(wide) {
+            margin-bottom: 32px;
+          }
+        }
+      }
+
+      p {
+        max-width: 800px;
+        @include bp(lap) {
+          max-width: 400px;
+        }
+
+        &.with-margin {
+          margin-bottom: 32px;
+          @include bp(wide) {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+
+    .button-container {
+      margin-top: 30px;
+    }
+  }
+}

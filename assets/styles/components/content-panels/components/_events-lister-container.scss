@@ -1,0 +1,97 @@
+.events-lister-container {
+  &:first-of-type {
+    padding-top: 0;
+  }
+  padding: 32px 0px;
+  @include bp(lap) {
+    display: flex;
+    justify-content: space-between;
+    padding: 48px 0px;
+  }
+  border-bottom: solid 1px getcolor("charcoal-grey-20");
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+
+  align-items: center;
+  &__col1 {
+    margin-bottom: 14px;
+    @include bp(lap) {
+      flex: 0 0 250px;
+      padding-right: 30px;
+      margin-bottom: 0px;
+    }
+
+    .card-tag {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__col2 {
+    margin-bottom: 10px;
+    @include bp(lap) {
+      flex: 1 1 auto;
+      margin-bottom: 0px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    h2 {
+      margin: 0;
+      margin-bottom: 24px;
+
+      @include bp(lap) {
+        margin-bottom: 0px;
+      }
+
+      text-decoration: none;
+    }
+
+    // @include bp(lap) {
+    //   &:hover {
+    //     + .events-lister-container__col3 {
+    //       a {
+    //         &.button--arrow-open-link {
+    //           &:before {
+    //             background-color: getcolor("black");
+    //             border: solid 1px getcolor("black");
+    //           }
+
+    //           &:after {
+    //             background: url("../images/icons/icon-external-link-pale-yellow1a.svg")
+    //               no-repeat center center;
+    //             background-size: contain;
+    //           }
+    //         }
+
+    //         &.button--arrow-right {
+    //           &:before {
+    //             background-color: getcolor("black");
+    //           }
+
+    //           &:after {
+    //             background: url("../images/icons/icon-right-arrow-pale-yellow1a.svg")
+    //               no-repeat center center;
+    //             background-size: contain;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    &__col3 {
+      @include bp(lap) {
+        flex: 0 0 150px;
+      }
+
+      text-align: right;
+    }
+  }
+}

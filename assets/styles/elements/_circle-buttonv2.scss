@@ -1,0 +1,733 @@
+//
+// Circle Button
+//
+
+// Options
+
+// Arrow Down
+// Arrow Right
+// Arrow Left
+// Arrow up
+// Download
+// Close
+
+// All buttons are icon buttons
+
+// Usage:
+// circle-buttonV2 circle-buttonV2--arrow-left circle-buttonV2--inline
+// circle-buttonV2 circle-buttonV2--responsive circle-buttonV2--arrow-left circle-buttonV2--inline
+// circle-buttonV2 circle-buttonV2--small circle-buttonV2--small--arrow-down circle-buttonV2--inline
+
+$desktop_circle_icon_size: 55px;
+$mobile_circle_icon_size: 33px;
+$mobile_responsive_circle_icon_size: 44px;
+
+button.circle-buttonV2,
+a.circle-buttonV2,
+div.circle-buttonV2 {
+  position: relative;
+  width: $desktop_circle_icon_size;
+  height: $desktop_circle_icon_size;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 1px getcolor("charcoal-grey");
+  @include bp($button_transition_width) {
+    transition:
+      border-color 400ms ease,
+      background-color 300ms ease-in-out;
+
+    // transition: background-color 300ms ease-in-out;
+  }
+
+  display: block;
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &:hover {
+    border: solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("charcoal-grey");
+    cursor: pointer;
+  }
+
+  // Is the container for the icon
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    mask-size: contain;
+
+    @include bp($button_transition_width) {
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  &--arrow-right {
+    &::after {
+      background: getcolor("charcoal-grey");
+      mask-image: url("../images/iconsv2/new-arrow-right-white-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--arrow-left {
+    &::after {
+      background: getcolor("charcoal-grey");
+      transform: rotate(-180deg);
+      mask-image: url("../images/iconsv2/new-arrow-right-white-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--arrow-up {
+    &::after {
+      background: getcolor("charcoal-grey");
+      transform: rotate(-90deg);
+      mask-image: url("../images/iconsv2/new-arrow-right-white-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--arrow-down {
+    &::after {
+      background: getcolor("charcoal-grey");
+      transform: rotate(90deg);
+      mask-image: url("../images/iconsv2/new-arrow-right-white-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--arrow-download {
+    &::after {
+      background: getcolor("charcoal-grey");
+      mask-image: url("../images/iconsv2/new-arrow-download-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--close {
+    &::after {
+      background: getcolor("charcoal-grey");
+      mask-image: url("../images/iconsv2/new-close-55.svg");
+    }
+
+    &:hover {
+      background-color: getcolor("charcoal-grey") !important;
+    }
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  &--external-link {
+    &::after {
+      background: getcolor("charcoal-grey");
+      mask-image: url("../images/iconsv2/new-external-link-white-55.svg");
+    }
+
+    &:hover::after {
+      background: getcolor("white");
+    }
+  }
+
+  // Small variations of buttons
+  &--small {
+    width: $mobile_circle_icon_size;
+    height: $mobile_circle_icon_size;
+
+    &--arrow-right {
+      &::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-arrow-right-white-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-left {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(-180deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-up {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(-90deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-down {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(90deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-download {
+      &::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-arrow-download-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--external-link {
+      &::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-external-link-white-33.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+  }
+
+  // Medium variations of buttons
+  &--medium {
+    width: $mobile_responsive_circle_icon_size;
+    height: $mobile_responsive_circle_icon_size;
+
+    &--arrow-right {
+      &::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-arrow-right-white-44.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-left {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(-180deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-44.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-up {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(-90deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-44.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    &--arrow-down {
+      &::after {
+        background: getcolor("charcoal-grey");
+        transform: rotate(90deg);
+        mask-image: url("../images/iconsv2/new-arrow-right-white-44.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+
+    // Download icon missing in 44px - needs to be created.
+
+    &--external-link {
+      &::after {
+        background: getcolor("charcoal-grey");
+        mask-image: url("../images/iconsv2/new-external-link-white-44.svg");
+      }
+
+      &:hover::after {
+        background: getcolor("white");
+      }
+    }
+  }
+
+  &--responsive {
+    width: $mobile_responsive_circle_icon_size;
+    height: $mobile_responsive_circle_icon_size;
+
+    @include bp(lap) {
+      width: $desktop_circle_icon_size;
+      height: $desktop_circle_icon_size;
+    }
+
+    // These are only configured specifically with images for 44px for arrow-right and external link.  All others will adjust the 55px images.
+    &--small {
+      width: $mobile_circle_icon_size;
+      height: $mobile_circle_icon_size;
+
+      &--arrow-right {
+        &::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-arrow-right-white-33.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("white");
+        }
+      }
+
+      &--external-link {
+        &::after {
+          background: getcolor("charcoal-grey");
+          mask-image: url("../images/iconsv2/new-external-link-white-33.svg");
+        }
+
+        &:hover::after {
+          background: getcolor("white");
+        }
+      }
+
+      @include bp(lap) {
+        width: $mobile_responsive_circle_icon_size;
+        height: $mobile_responsive_circle_icon_size;
+
+        &--arrow-right {
+          &::after {
+            background: getcolor("charcoal-grey");
+            mask-image: url("../images/iconsv2/new-arrow-right-white-44.svg");
+          }
+
+          &:hover::after {
+            background: getcolor("white");
+          }
+        }
+
+        &--external-link {
+          &::after {
+            background: getcolor("charcoal-grey");
+            mask-image: url("../images/iconsv2/new-external-link-white-44.svg");
+          }
+
+          &:hover::after {
+            background: getcolor("white");
+          }
+        }
+      }
+    }
+  }
+
+  // Colour variations
+
+  &--solid-yellow-solid-black {
+    border: solid 1px getcolor("yellow");
+    background-color: getcolor("yellow");
+
+    &:hover {
+      border: solid 1px getcolor("charcoal-grey");
+      background-color: getcolor("charcoal-grey");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("charcoal-grey");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("yellow");
+    }
+  }
+
+  &--solid-yellow-solid-black {
+    border: solid 1px getcolor("yellow");
+    background-color: getcolor("yellow");
+
+    &:hover {
+      border: solid 1px getcolor("charcoal-grey");
+      background-color: getcolor("charcoal-grey");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("charcoal-grey");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("yellow");
+    }
+  }
+
+  &--yellow-black-border-solid-black {
+    border: solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("yellow");
+
+    &:hover {
+      border: solid 1px getcolor("charcoal-grey");
+      background-color: getcolor("charcoal-grey");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("charcoal-grey");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("yellow");
+    }
+  }
+
+  // Floral White Black Border / Black Hover
+
+  &--fwhite-black-border-solid-black {
+    border: solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("floral-white");
+
+    &:hover {
+      border: solid 1px getcolor("charcoal-grey");
+      background-color: getcolor("charcoal-grey");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("charcoal-grey");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("floral-white");
+    }
+
+    &--no-override {
+      border: solid 1px getcolor("charcoal-grey") !important;
+      background-color: getcolor("floral-white") !important;
+
+      &:hover {
+        border: solid 1px getcolor("charcoal-grey") !important;
+        background-color: getcolor("charcoal-grey") !important;
+      }
+      // The icon mask colour
+      &::after {
+        background: getcolor("charcoal-grey") !important;
+      }
+
+      // The icon mask hover
+      &:hover::after {
+        background-color: getcolor("floral-white") !important;
+      }
+    }
+  }
+
+  // Black Back (Floral Arrow) / Yellow Hover
+
+  &--black-back-fwhite-icon-yellow-hover {
+    border: solid 2px solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("charcoal-grey");
+
+    &:hover {
+      border: solid 1px solid 1px getcolor("yellow");
+      background-color: getcolor("yellow");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("floral-white");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("charcoal-grey");
+    }
+  }
+
+  &--pale-yellow-back-black-border-solid-black-hover {
+    border: solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("pale-yellow1");
+
+    &:hover {
+      border: solid 1px getcolor("charcoal-grey");
+      background-color: getcolor("charcoal-grey");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("charcoal-grey");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("pale-yellow1");
+    }
+  }
+
+  // Black BG, white border / White hover (You don't need this if on a back background as a standard circle button will change to this automatically using the colour overrides)
+  &--black-back-white-border-solid-white-hover {
+    border: solid 1px getcolor("white");
+    background-color: getcolor("charcoal-grey");
+
+    &:hover {
+      border: solid 1px getcolor("white");
+      background-color: getcolor("white");
+    }
+    // The icon mask colour
+    &::after {
+      background: getcolor("white");
+    }
+
+    // The icon mask hover
+    &:hover::after {
+      background-color: getcolor("charcoal-grey");
+    }
+  }
+}
+
+// Panel Colours Overrides
+
+.content {
+  &.bgc-charcoal-grey {
+    .circle-buttonV2 {
+      border: solid 1px getcolor("white");
+      background-color: getcolor("charcoal-grey");
+
+      &:hover {
+        border: solid 1px getcolor("white");
+        background-color: getcolor("white");
+      }
+      // The icon mask colour
+      &::after {
+        background: getcolor("white");
+      }
+
+      // The icon mask hover
+      &:hover::after {
+        background-color: getcolor("charcoal-grey");
+      }
+
+      // White border Black BG / Black Border (Charcoal Panel Link)
+
+      &--black-back-white-border-solid-black-hover {
+        border: solid 1px getcolor("white");
+        background-color: getcolor("charcoal-grey");
+
+        &:hover {
+          border: solid 1px getcolor("charcoal-grey");
+          background-color: getcolor("yellow");
+        }
+        // The icon mask colour
+        &::after {
+          background: getcolor("white");
+        }
+
+        // The icon mask hover
+        &:hover::after {
+          background-color: getcolor("white");
+        }
+      }
+    }
+  }
+}
+
+//
+// Panel Text Hover Overrides
+//
+
+.content__cross-link-panel {
+  .link-container {
+    &:hover {
+      .link-container__col2 {
+        > .circle-buttonV2--arrow-right {
+          background-color: getcolor("white");
+          border: solid 1px getcolor("white");
+          &::after {
+            background: getcolor("charcoal-grey");
+          }
+        }
+
+        > .circle-buttonV2--external-link {
+          background-color: getcolor("white");
+          border: solid 1px getcolor("white");
+          &::after {
+            background: getcolor("charcoal-grey");
+          }
+        }
+      }
+    }
+  }
+}
+
+.content__page-link-panel {
+  .content-container {
+    &__row {
+      &:hover {
+        .link-container__col2 {
+          @include bp(lap) {
+            > .circle-buttonV2 {
+              background: getcolor("white");
+              border: solid 1px getcolor("charcoal-grey") !important;
+              &::after {
+                background: getcolor("charcoal-grey");
+              }
+            }
+
+            > .circle-buttonV2 {
+              background: getcolor("charcoal-grey");
+              border: solid 1px getcolor("yellow");
+              &::after {
+                background: getcolor("white");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.bgc-charcoal-grey {
+    .content-container {
+      &__row {
+        &:hover {
+          .link-container__col2 {
+            @include bp(lap) {
+              > .circle-buttonV2 {
+                background: getcolor("white");
+                border: solid 1px getcolor("yellow") !important;
+                &::after {
+                  background: getcolor("charcoal-grey");
+                }
+              }
+
+              > .circle-buttonV2 {
+                background: getcolor("charcoal-grey");
+                border: solid 1px getcolor("yellow");
+                &::after {
+                  background: getcolor("white");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.content__resource-downloads-panel {
+  .content-container {
+    &__row {
+      &:hover {
+        .link-container__col2 {
+          > .circle-buttonV2 {
+            background: getcolor("white");
+            border: solid 1px getcolor("white");
+            &::after {
+              background: getcolor("charcoal-grey");
+            }
+          }
+          @include bp(lap) {
+            > .circle-buttonV2 {
+              background: getcolor("charcoal-grey");
+              border: solid 1px getcolor("yellow");
+              &::after {
+                background: getcolor("white");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-modal {
+  .site-search-container__results {
+    .result-container {
+      .result-container__col1 {
+        transition: padding 0.2s ease-out;
+      }
+
+      &:hover {
+        .result-container__col1 {
+          @include bp(lap) {
+            padding-left: 10px;
+            transition: padding 0.2s ease-out;
+          }
+        }
+        .result-container__col2 {
+          @include bp(lap) {
+            > .circle-buttonV2 {
+              background: getcolor("charcoal-grey");
+              border: solid 1px getcolor("charcoal-grey");
+              &::after {
+                background: getcolor("white");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .quick-links-container {
+    .quick-link-container {
+      .quick-link-container__col1 {
+        transition: padding 0.2s ease-out;
+      }
+
+      &:hover {
+        .quick-link-container__col1 {
+          @include bp(lap) {
+            padding-left: 10px;
+            transition: padding 0.2s ease-out;
+          }
+        }
+        .quick-link-container__col2 {
+          @include bp(lap) {
+            > .circle-buttonV2 {
+              background: getcolor("charcoal-grey");
+              border: solid 1px getcolor("charcoal-grey");
+              &::after {
+                background: getcolor("white");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

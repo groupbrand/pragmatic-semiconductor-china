@@ -1,0 +1,232 @@
+.news-item-container {
+  overflow: hidden;
+  background-color: getcolor("floral-white");
+
+  &--yellow {
+    background-color: getcolor("pale-yellow-40");
+  }
+
+  border-radius: $border-radius-sm;
+
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 6px;
+  @include bp(lap) {
+    padding: 8px;
+  }
+
+  .content-container {
+    flex: 0 0 auto;
+
+    padding: 16px;
+    @include bp(lap) {
+      padding: 14px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .data-container {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 11px;
+      @include bp(lap) {
+        margin-bottom: 20px;
+      }
+
+      &__col1 {
+        flex: 0 0 50%;
+        position: relative;
+      }
+
+      &__col2 {
+        flex: 0 0 50%;
+        .card-tag {
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .image-container {
+    flex: 0 0 auto;
+
+    aspect-ratio: 1/0.6;
+    @include bp(wide) {
+      aspect-ratio: 1/0.8;
+    }
+
+    overflow: hidden;
+
+    background-image: url("../images/default-article-thumbnail.webp");
+    background-size: cover;
+    background-position: center;
+    border-radius: to-rem(4);
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: to-rem(4);
+      object-fit: cover;
+      object-position: center;
+      line-height: 1;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    position: relative;
+    .buttonV2 {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+//
+// Landscape Version
+//
+
+.news-item-container--landscape {
+  background-color: getcolor("floral-white");
+  border-radius: $border-radius-sm;
+
+  min-height: unset;
+  @include bp(lap) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: 358px;
+    //border: solid 1px blue;
+  }
+
+  @include bp(wide) {
+    min-height: 458px;
+  }
+
+  box-sizing: border-box;
+  padding: 6px;
+  @include bp(lap) {
+    padding: 8px;
+  }
+
+  .content-container {
+    flex: 0 0 100%;
+
+    //border: solid 1px red;
+
+    @include bp(1400px) {
+      flex: 0 0 50%;
+    }
+    box-sizing: border-box;
+
+    padding: 16px; // 22 - 6px;
+    @include bp(lap) {
+      padding: 48px 32px; // 48-8 &40 - 8px;
+      padding-right: 40px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .data-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+
+      &__col1 {
+        flex: 0 0 50%;
+        position: relative;
+      }
+
+      &__col2 {
+        flex: 0 0 50%;
+        .card-tag {
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h3.card-title {
+      font-size: 21px;
+      line-height: 28px;
+
+      @include bp(480px) {
+        font-size: 40px;
+        line-height: 44px;
+      }
+    }
+  }
+
+  .image-container {
+    display: block;
+
+    aspect-ratio: 1/0.8;
+    @include bp(tab) {
+      display: none;
+      aspect-ratio: unset;
+    }
+    @include bp(1400px) {
+      display: block;
+      flex: 0 0 50%;
+      aspect-ratio: 1/0.8;
+    }
+
+    flex: 0 0 auto;
+
+    overflow: hidden;
+
+    border-radius: to-rem(4);
+    overflow: hidden;
+
+    box-sizing: border-box;
+    //    border: solid 1px green;
+
+    .default-image {
+      background-image: url("../images/default-article-thumbnail.webp");
+      background-size: cover;
+      background-position: center;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: to-rem(4);
+      //    border: solid 1px blue;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: to-rem(4);
+      //     border: solid 1px black;
+      line-height: 1;
+    }
+
+    position: relative;
+    .buttonV2 {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}

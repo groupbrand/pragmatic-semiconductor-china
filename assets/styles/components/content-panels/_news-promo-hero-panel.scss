@@ -1,0 +1,116 @@
+&__news-promo-hero-panel {
+  padding-top: $hero-padding-top-mobile;
+  padding-bottom: $hero-padding-top-mobile;
+
+  @include bp(lap) {
+    padding-top: $hero-padding-top-lap;
+    padding-bottom: $hero-padding-top-lap;
+  }
+
+  @include bp(wide) {
+    padding-top: $hero-padding-top;
+    padding-bottom: $hero-padding-top;
+  }
+
+  p.hero-introduction {
+    margin-bottom: 60px;
+    font-size: to-rem(21);
+    line-height: to-rem(28);
+    @include bp(wide) {
+      font-size: to-rem(24);
+      line-height: to-rem(32);
+      margin-bottom: 100px;
+      max-width: 550px;
+    }
+  }
+
+  .content-container {
+    @include bp(lap) {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    &__col1 {
+      box-sizing: border-box;
+      margin-bottom: 16px;
+
+      @include bp(lap) {
+        flex: 0 0 66.6%;
+        background-color: getcolor("floral-white");
+        border-radius: $border-radius-sm;
+        margin-bottom: 0;
+      }
+    }
+
+    &__col2 {
+      box-sizing: border-box;
+      padding: 32px;
+      padding-bottom: 72px; // Has extra padding to account for abolute button.
+
+      @include bp(lap) {
+        padding-top: 80px;
+      }
+      @include bp(wide) {
+        padding: 40px;
+        padding-top: 136px;
+      }
+      background-color: getcolor("pale-yellow1");
+
+      border-radius: $border-radius-sm;
+      flex: 0 0 33.3%;
+
+      a {
+        text-decoration: none;
+      }
+      h5 {
+        font-size: to-rem(40);
+        @include lhCrop(40);
+        line-height: to-rem(40);
+
+        //background-color: red;
+
+        margin-bottom: 20px;
+        @include bp(1000px) {
+          font-size: to-rem(56);
+          @include lhCrop(56);
+          line-height: to-rem(58);
+        }
+      }
+
+      @include bp(lap) {
+      }
+      position: relative;
+
+      .circle-buttonV2 {
+        position: absolute;
+
+        bottom: 32px;
+        left: 32px;
+
+        @include bp(lap) {
+          bottom: 40px;
+          left: 40px;
+        }
+
+        // &:hover {
+        //   &::after {
+        //     // background: url("../images/icons/icon-right-arrow-pale-yellow1a.svg")
+        //     //   no-repeat center !important;
+        //     //          background-size: contain;
+
+        //     // transform: translate(-50%, -50%);
+
+        //     // width: 20px;
+        //     // height: 17px;
+        //     // background: url("../images/icons/icon-right-arrow-large-pale-yellow1.svg")
+        //     //   no-repeat center center !important;
+        //     background-color: red;
+        //     background-size: contain;
+        //   }
+        // }
+      }
+    }
+  }
+}

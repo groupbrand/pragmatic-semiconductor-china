@@ -1,0 +1,469 @@
+.button-center-container {
+  text-align: center;
+  margin: 0 auto;
+
+  &.mt-40 {
+    margin-top: 4rem;
+  }
+
+  &.mt-60 {
+    margin-top: 6rem;
+  }
+}
+
+// Button with text
+
+//
+// Button refactoring
+//
+
+// We noticed that icons are all different sizes (slightly).
+// It should not matter as they are all center justified in a larger container within the button circle.
+// However we were getting a flicker when the svgs were swapped out with different colours
+// Even though the svgs were identical with just colour changes.
+// Fixing the image width and height - seemed to resolve the issue, however this made scaling the images with the small class not so generic as that used a contain which didnt match the exact svg size
+// We noticed that this was only happening on larger monitors and occasionnaly on mobile.
+
+// Tried changing svgs to double size PNGs but this made no diffence, so sticking with SVGs.
+
+// As things stand - we are seeing a hover glitch on small arrow right with yellow (news promo panel on home page - but all other buttons working) - to test on mobile.
+// We fixed by making sure all after overrides had background contain in them.
+
+button.button,
+a.button,
+div.button {
+  position: relative;
+  padding: 11px 20px 12px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  font-size: to-rem(16);
+
+  font-weight: 400;
+  border-radius: 30px;
+  background-color: getcolor("charcoal-grey");
+
+  @include bp($button_transition_width) {
+    transition: all 200ms ease-in-out forwards;
+  }
+
+  color: getcolor("white");
+  border: none;
+  cursor: pointer;
+
+  &--icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    // Mobile vertical alignment looked 1px out due to the spacing on the font and how it centered.  We have adjusted this
+    // so that is looks visually better.
+    padding: 7px 20px 8px 8px;
+    @include bp($button_transition_width) {
+      padding: 8px 20px 8px 8px;
+    }
+
+    // Circle
+    &::before {
+      content: "";
+      align-self: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: solid 1px getcolor("white");
+
+      // This margin top works with the padding adjustment above for mobile, so that the text can be moved up 1px and the icon moved down so that does
+      // is still centered.
+      margin-top: 1px;
+      @include bp($button_transition_width) {
+        margin-top: 0px;
+        transition: all 300ms ease-in-out;
+      }
+    }
+
+    // Arrow
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      //background-color: red !important;
+      // // Set Icons all to same size
+      // width: to-rem(16);
+      // height: to-rem(16);
+
+      background: url("../images/icons/icon-right-arrow-white.svg") no-repeat
+        center;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 28px;
+      transform: translate(-50%, -50%);
+      @include bp($button_transition_width) {
+        transition: all 300ms ease-in-out;
+      }
+      //transition: background 200ms ease-in-out forwards;
+    }
+
+    &:hover::before {
+      background-color: getcolor("white");
+      @include bp($button_transition_width) {
+        transition: all 300ms ease-in-out;
+      }
+    }
+
+    &:hover::after {
+      background-color: getcolor("black");
+      background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+        center;
+      // @include bp($button_transition_width) {
+      //   transition: all 300ms ease-in-out;
+      // }
+    }
+  }
+
+  // Overrides for arrow right
+  &--arrow-right {
+    //background-color: red;
+    // Arrow
+    &::after {
+      content: "";
+      width: 14px;
+      height: 15px;
+
+      background: url("../images/icons/icon-right-arrow-white.svg") no-repeat
+        center;
+
+      background-size: contain;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+        center;
+      width: 14px;
+      height: 15px;
+      background-size: contain;
+    }
+  }
+
+  &--icon-play {
+    // Play
+    &::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url("../images/icons/icon-play.svg") no-repeat center;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-play-black.svg") no-repeat center;
+    }
+  }
+
+  &--arrow-open-link {
+    &::before {
+      border: 1px solid getcolor("white");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-external-link-white2.svg") no-repeat
+        center center;
+      height: 15px;
+      width: 15px;
+      background-size: contain;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("white");
+        border: 1px solid getcolor("white");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-external-link-black.svg")
+          no-repeat center center;
+
+        height: 15px;
+        width: 15px;
+        background-size: contain;
+      }
+    }
+  }
+
+  &--arrow-plus {
+    // &::after {
+    //   mask: url("../images/icons/icon-plus.svg") no-repeat center;
+    // }
+
+    &::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url("../images/icons/icon-plus-white.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-plus.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  //
+  // Size Variations
+  //
+
+  &--small {
+    // Circle
+    &::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+    }
+
+    // Arrow
+    &::after {
+      content: "";
+      // width: to-rem(15);
+      // height: to-rem(16);
+      left: to-rem(23);
+      //background-color: red !important;
+    }
+  }
+
+  //
+  // Colour Variations
+  //
+
+  &--yellow-hover {
+    color: getcolor("yellow");
+    &::before {
+      border: 1px solid getcolor("yellow");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-right-arrow-yellow.svg") no-repeat
+        center center;
+      background-size: contain;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("yellow");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+          center center;
+        background-size: contain;
+      }
+    }
+
+    &.button--arrow-open-link {
+      &::after {
+        background: url("../images/icons/icon-external-link-yellow1.svg")
+          no-repeat center center;
+        background-size: contain;
+      }
+
+      &:hover {
+        &:after {
+          background: url("../images/icons/icon-external-link-black.svg")
+            no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &--yellow {
+    background-color: getcolor("yellow");
+    color: getcolor("black");
+
+    &:hover {
+      background-color: getcolor("black");
+      color: getcolor("black");
+    }
+
+    &.button--arrow-right {
+      background-color: getcolor("yellow");
+      &::before {
+        content: "";
+        border: solid 1px getcolor("black");
+      }
+
+      &::after {
+        background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+          center;
+        // transition: background 200ms ease-in-out;
+        background-size: contain;
+      }
+
+      &:hover::before {
+        background: getcolor("black");
+        // transition: background 200ms ease-in-out;
+      }
+
+      &:hover::after {
+        background: url("../images/icons/icon-right-arrow-yellow.svg") no-repeat
+          center;
+        // transition: background 900ms ease-in-out;
+        background-size: contain;
+      }
+    }
+
+    &.button--arrow-open-link {
+      background-color: getcolor("yellow");
+      &::before {
+        content: "";
+        border: solid 1px getcolor("black");
+      }
+
+      &::after {
+        background: url("../images/icons/icon-external-link.webp") no-repeat
+          center;
+        background-size: contain;
+      }
+
+      &:hover::before {
+        background: getcolor("black");
+        // transition: background 200ms ease-in-out;
+      }
+
+      &:hover::after {
+        background: url("../images/icons/icon-external-link-white.webp")
+          no-repeat center;
+        background-size: contain;
+        //   transition: background 900ms ease-in-out;
+      }
+    }
+  }
+
+  &--mint-green-hover {
+    color: getcolor("turquoise");
+    &::before {
+      border: 1px solid getcolor("turquoise");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-plus-mint-green.svg") no-repeat
+        center center;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("turquoise");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-plus.svg") no-repeat center center;
+      }
+    }
+  }
+
+  &--plus-yellow-hover {
+    color: getcolor("yellow");
+    &::before {
+      border: 1px solid getcolor("yellow");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-plus-yellow.svg") no-repeat center
+        center;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("yellow");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-plus.svg") no-repeat center center;
+      }
+    }
+  }
+
+  &--pale-yellow-hover {
+    color: getcolor("pale-yellow");
+    &::before {
+      border: 1px solid getcolor("pale-yellow");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-external-link-pale-yellow1.svg")
+        no-repeat center center;
+      background-size: contain;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("pale-yellow");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-external-link-black.svg")
+          no-repeat center center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &--pale-yellow1 {
+    color: getcolor("black");
+    background-color: getcolor("pale-yellow1");
+    border: solid 1px getcolor("black");
+    &::before {
+      border: 1px solid getcolor("black");
+    }
+
+    &::after {
+      background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+        center center;
+      background-size: contain;
+    }
+
+    &:hover {
+      &:before {
+        background-color: getcolor("black");
+        border: solid 1px getcolor("black");
+      }
+
+      &:after {
+        background: url("../images/icons/icon-right-arrow-pale-yellow1a.svg")
+          no-repeat center center;
+        background-size: contain;
+      }
+    }
+
+    &.button--arrow-open-link {
+      &::after {
+        background: url("../images/icons/icon-external-link-black.svg")
+          no-repeat center center;
+        background-size: contain;
+      }
+
+      &:hover {
+        &:before {
+          background-color: getcolor("black");
+        }
+
+        &:after {
+          background: url("../images/icons/icon-external-link-pale-yellow1a.svg")
+            no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.block {
+    display: block;
+    margin: 0 auto;
+  }
+}

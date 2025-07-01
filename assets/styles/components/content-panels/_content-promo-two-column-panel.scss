@@ -1,0 +1,257 @@
+&__content-promo-two-column-panel {
+  h2 {
+    color: getcolor("charcoal-grey");
+    font-size: to-rem(52);
+    @include lhCrop(52);
+    font-weight: 400;
+    line-height: to-rem(50);
+    margin: 0 0 48px;
+
+    @include bp(lap) {
+      font-size: to-rem(62);
+      @include lhCrop(62);
+      line-height: to-rem(62);
+    }
+    @include bp(wide) {
+      font-size: to-rem(72);
+      @include lhCrop(72);
+      line-height: to-rem(68);
+      margin: 0 0 60px;
+    }
+
+    &.smaller-heading {
+      color: getcolor("charcoal-grey");
+      font-size: to-rem(44);
+      @include lhCrop(44);
+      line-height: to-rem(47);
+      margin: 0 0 18px;
+
+      @include bp(lap) {
+        font-size: to-rem(54);
+        @include lhCrop(54);
+        line-height: to-rem(58);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(64);
+        @include lhCrop(64);
+        line-height: to-rem(68);
+        margin: 0 0 32px;
+      }
+    }
+
+    max-width: 756px;
+  }
+
+  .introduction {
+    color: getcolor("charcoal-grey");
+    max-width: 550px;
+
+    font-size: to-rem(21);
+    line-height: to-rem(28);
+    margin: 0 0 40px;
+
+    @include bp(lap) {
+      font-size: to-rem(24);
+      line-height: to-rem(32);
+    }
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include bp(1000px) {
+      flex-direction: row;
+    }
+
+    &__col1,
+    &__col2 {
+      border-radius: $border-radius-sm;
+      padding: 48px 18px;
+
+      @include bp(lap) {
+        padding: 80px 32px;
+      }
+
+      @include bp(desk) {
+        padding: 80px 72px;
+      }
+
+      @include bp(wide) {
+        padding: 130px 122px;
+      }
+
+      @include bp(1920px) {
+        padding: 130px 188px;
+      }
+
+      &.bgc-purple {
+        background-color: getcolor("purple");
+        // Overridden button styles
+        // a.button {
+        //   color: getcolor("purple");
+
+        //   &::before {
+        //     border: 1px solid getcolor("purple");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("purple");
+        //   }
+
+        //   &::after {
+        //     content: "";
+        //     background: url("../images/icons/icon-right-arrow-purple.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-right-arrow-black.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+        // }
+
+        // // External Link
+        // a.button--arrow-open-link {
+        //   color: getcolor("grey");
+
+        //   &::before {
+        //     border: 1px solid getcolor("grey");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("grey");
+        //   }
+
+        //   &::after {
+        //     background: url("../images/icons/icon-external-link-grey.svg")
+        //       no-repeat center center;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-external-link-black.svg")
+        //       no-repeat center center;
+        //   }
+        // }
+      }
+
+      &.bgc-grey {
+        background-color: getcolor("grey");
+        // Overridden button styles
+        // a.button {
+        //   color: getcolor("grey");
+
+        //   &::before {
+        //     border: 1px solid getcolor("grey");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("grey");
+        //   }
+
+        //   &::after {
+        //     content: "";
+        //     background: url("../images/icons/icon-right-arrow-grey.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-right-arrow-black.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+        // }
+
+        // // External Link
+        // a.button--arrow-open-link {
+        //   color: getcolor("grey");
+
+        //   &::before {
+        //     border: 1px solid getcolor("grey");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("grey");
+        //   }
+
+        //   &::after {
+        //     background: url("../images/icons/icon-external-link-grey.svg")
+        //       no-repeat center center;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-external-link-black.svg")
+        //       no-repeat center center;
+        //   }
+        // }
+      }
+
+      &.bgc-salmon {
+        background-color: getcolor("salmon");
+        // Overridden button styles
+
+        // a.button {
+        //   color: getcolor("salmon");
+
+        //   &::before {
+        //     border: 1px solid getcolor("salmon");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("salmon");
+        //   }
+
+        //   &::after {
+        //     content: "";
+
+        //     background: url("../images/icons/icon-right-arrow-salmon.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-right-arrow-black.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+        // }
+
+        // // External Link
+        // a.button--arrow-open-link {
+        //   color: getcolor("salmon");
+
+        //   &::before {
+        //     border: 1px solid getcolor("salmon");
+        //   }
+
+        //   &:hover::before {
+        //     background-color: getcolor("salmon");
+        //   }
+
+        //   &::after {
+        //     background: url("../images/icons/icon-external-link-salmon.svg")
+        //       no-repeat center center;
+        //   }
+
+        //   &:hover::after {
+        //     background: url("../images/icons/icon-external-link-black.svg")
+        //       no-repeat center center;
+        //   }
+        // }
+      }
+    }
+
+    &__col1 {
+      flex: 1;
+    }
+
+    &__col2 {
+      flex: 1;
+    }
+  }
+}

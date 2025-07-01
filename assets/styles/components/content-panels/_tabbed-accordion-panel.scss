@@ -1,0 +1,75 @@
+&__tabbed-accordion-panel {
+  .tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+
+  .tabset .tab-panel {
+    display: none;
+  }
+
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset
+    > input:nth-child(11):checked
+    ~ .tab-panels
+    > .tab-panel:nth-child(6) {
+    display: block;
+  }
+
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0px 20px;
+
+    border: 1px solid transparent;
+
+    border-bottom: 0;
+    cursor: pointer;
+
+    font-size: to-rem(23);
+    line-height: to-rem(26);
+    margin-right: 20px;
+    @include bp(wide) {
+      font-size: to-rem(32);
+      line-height: to-rem(40);
+      margin-right: 40px;
+    }
+
+    color: getcolor("medium-gray");
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  //   input:focus-visible + label {
+  //     outline: 2px solid rgba(0, 102, 204, 1);
+  //     border-radius: 3px;
+  //   }
+
+  .tabset > label:hover,
+  .tabset > input:focus + label,
+  .tabset > input:checked + label {
+    color: getcolor("charcoal-grey");
+  }
+
+  //   .tabset > label:hover::after,
+  //   .tabset > input:focus + label::after,
+  //   .tabset > input:checked + label::after {
+  //     background: #06c;
+  //   }
+
+  .tabset > input:checked + label {
+    border-bottom: 1px solid getcolor("charcoal-grey");
+    margin-bottom: -1px;
+  }
+
+  .tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid getcolor("charcoal-grey-15");
+  }
+}

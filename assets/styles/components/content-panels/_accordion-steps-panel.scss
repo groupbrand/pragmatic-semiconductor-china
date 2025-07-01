@@ -1,0 +1,299 @@
+&__accordion-steps-panel {
+  h2.section-title-small {
+    margin-bottom: 60px;
+  }
+
+  .accordion-steps-container {
+    @include bp(1100px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__col {
+      @include bp(1100px) {
+        flex: 0 0 48%;
+      }
+    }
+  }
+
+  .accordion-steps {
+    @include clearfix;
+
+    details {
+      @include clearfix;
+      //border-bottom: 1px solid getcolor("charcoal-grey-15");
+      margin-bottom: 20px;
+      //transition: background 0.1s ease-in;
+      background-color: transparent;
+      border: solid 1px getcolor("charcoal-grey");
+      overflow: hidden;
+      border-radius: $border-radius-lg;
+
+      cursor: pointer;
+
+      position: relative;
+
+      .accordion-title {
+        padding: 20px 15px;
+        @include bp(1100) {
+          padding: 20px 20px;
+        }
+        @include bp(wide) {
+          padding: 20px 32px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        background-color: transparent;
+
+        transition: 0.3s ease-in-out;
+        &:hover {
+          transition: 0.3s ease-in-out;
+          background-color: getcolor("white");
+
+          .count {
+            transition: all 0.3s ease-in;
+            background-color: getcolor("yellow");
+            p {
+              transition: color 0.3s ease-in;
+              color: getcolor("charcoal-grey");
+            }
+          }
+        }
+
+        &__cola {
+          flex: 0 0 60px;
+
+          @include bp(lap) {
+            flex: 0 0 80px;
+          }
+
+          @include bp(wide) {
+            flex: 0 0 100px;
+          }
+
+          .count {
+            background-color: getcolor("charcoal-grey");
+
+            border-radius: 50%;
+
+            width: 40px;
+            height: 40px;
+
+            @include bp(lap) {
+              width: 60px;
+              height: 60px;
+            }
+
+            @include bp(wide) {
+              width: 80px;
+              height: 80px;
+            }
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            p {
+              display: block;
+              font-family: get-font-family("heading");
+              line-height: 0.6;
+
+              font-size: to-rem(28);
+              @include bp(lap) {
+                font-size: to-rem(40);
+              }
+              @include bp(wide) {
+                font-size: to-rem(56);
+              }
+              font-weight: 400;
+              color: getcolor("yellow");
+              //background-color: red;
+              //width: 30px;
+              text-align: center;
+              margin: 0;
+            }
+          }
+        }
+        &__col1 {
+          flex: 1 1 auto;
+
+          // padding: 25px 0px 25px;
+          // @include bp(wide) {
+          //   padding: 30px 0px 30px;
+          // }
+          // padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          h3 {
+            margin: 0 0 0;
+          }
+          cursor: pointer;
+        }
+
+        &__col2 {
+          flex: 0 0 30px;
+
+          .accordion-icon {
+            position: relative;
+            width: to-rem(55);
+            height: to-rem(55);
+            display: inline-block;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: solid 1px getcolor("charcoal-grey");
+            background-color: transparent;
+            transition: all 500ms ease-in-out;
+
+            width: to-rem(33);
+            height: to-rem(33);
+
+            @include bp(lap) {
+              width: to-rem(40);
+              height: to-rem(40);
+            }
+
+            &__left,
+            &__right {
+              $anim-speed: 0.3s;
+              background-color: getcolor("black");
+
+              height: 1px;
+              position: absolute;
+              top: 15px;
+              width: 15px;
+              @include bp(lap) {
+                top: 18px;
+                width: 20px;
+              }
+              transition:
+                background-color 0s linear,
+                // Unwind minus sign to plus
+                transform 0.5s ease-in-out;
+            }
+
+            &__left {
+              left: 8px;
+              @include bp(lap) {
+                left: 9px;
+              }
+            }
+
+            &__right {
+              left: 8px;
+              @include bp(lap) {
+                left: 9px;
+              }
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+
+      // This overrides the open state, as this is not removed till after the animation finishes.
+      &.closing-faq {
+        //transition: background 1s ease-out !important;
+        //background-color: transparent !important;
+
+        .accordion-title__cola {
+          // .count {
+          //   transition: all 0.7s ease-out !important;
+          //   background-color: getcolor("black") !important;
+          //   p {
+          //     transition: color 0.7s ease-out !important;
+          //     color: getcolor("yellow") !important;
+          //   }
+          // }
+        }
+
+        .accordion-title__col2 {
+          .accordion-icon {
+            background-color: transparent !important;
+
+            &__right {
+              transform: rotate(90deg) !important;
+              background-color: getcolor("black") !important;
+            }
+          }
+        }
+      }
+
+      &[open] {
+        // transition: background 0.3s ease-in;
+        background-color: getcolor("white");
+
+        summary {
+          margin-bottom: 0px;
+          z-index: 1;
+
+          .count {
+            //transition: all 0.3s ease-in;
+            background-color: getcolor("yellow");
+            p {
+              //              transition: color 0.4s ease-in;
+              color: getcolor("charcoal-grey");
+            }
+          }
+        }
+
+        .content {
+          padding: 10px 15px 15px;
+          @include bp(1100) {
+            padding: 10px 20px 20px;
+          }
+          @include bp(wide) {
+            padding: 10px 32px 32px;
+          }
+        }
+
+        .accordion-title__col2 {
+          .accordion-icon {
+            background-color: getcolor("charcoal-grey");
+            &__left,
+            &__right {
+              $anim-speed: 0.2s;
+            }
+
+            &__right {
+              left: 8px;
+              @include bp(lap) {
+                left: 9px;
+              }
+              transform: rotate(180deg);
+              transition: 0.5s ease-in-out;
+              background-color: getcolor("white");
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      position: relative;
+      z-index: 2;
+
+      padding-left: 0px;
+      padding-bottom: 30px;
+      @include bp(lap) {
+        padding-bottom: 50px;
+      }
+      padding-right: 40px;
+      border-top: 0;
+
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,359 @@
+//
+// Circle Button
+//
+
+button.circle-button,
+a.circle-button,
+div.circle-button {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: solid 1px getcolor("charcoal-grey");
+  @include bp($button_transition_width) {
+    transition: all 200ms ease-in-out;
+  }
+  display: block;
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55px;
+    height: 55px;
+
+    background-size: contain;
+    @include bp($button_transition_width) {
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  &:hover {
+    border: solid 1px getcolor("charcoal-grey");
+    background-color: getcolor("charcoal-grey");
+    cursor: pointer;
+  }
+
+  &--arrow-up {
+    &::after {
+      transform: translate(-50%, -50%) rotate(-180deg);
+      background: url("../images/icons/icon-down-arrow-white.svg") no-repeat
+        center center;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-down-arrow-black.svg") no-repeat
+        center center;
+    }
+  }
+
+  &--arrow-down {
+    &::after {
+      transform: translate(-50%, -50%); // rotate(90deg);
+      background: url("../images/icons/icon-down-arrow-black.svg") no-repeat
+        center center;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-down-arrow-yellow.svg") no-repeat
+        center center;
+    }
+  }
+
+  &--arrow-right {
+    &::after {
+      transform: translate(-50%, -50%);
+
+      width: 20px;
+      height: 17px;
+      background: url("../images/icons/icon-right-arrow-large-black.svg")
+        no-repeat center !important;
+
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 17px;
+
+        background: url("../images/icons/icon-right-arrow-large-pale-yellow1.svg")
+          no-repeat center !important;
+
+        background-size: contain;
+      }
+    }
+
+    // Colour Variations
+
+    &--disabled {
+      border-color: getcolor("charcoal-grey-20");
+
+      //border: none;
+      &:hover {
+        border-color: getcolor("charcoal-grey-20");
+        background-color: inherit;
+
+        &::after {
+          background: url("../images/icons/icon-right-arrow-large-grey.svg")
+            no-repeat center center;
+        }
+      }
+
+      &::after {
+        background: url("../images/icons/icon-right-arrow-large-grey.svg")
+          no-repeat center center;
+      }
+    }
+
+    &--white {
+      //background-color: getcolor("charcoal-grey");
+      border: solid 1px getcolor("white");
+
+      &::after {
+        background: url("../images/icons/icon-right-arrow-large-white.svg")
+          no-repeat center center !important;
+      }
+
+      &:hover {
+        background-color: getcolor("white");
+        border: solid 1px getcolor("white");
+        &::after {
+          background: url("../images/icons/icon-right-arrow-large-black.svg")
+            no-repeat center center;
+        }
+      }
+    }
+
+    &--white-hover {
+      &:hover {
+        &::after {
+          background: url("../images/icons/icon-right-arrow-large-white.svg")
+            no-repeat center center;
+        }
+      }
+    }
+  }
+
+  &--arrow-left {
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+
+      width: 20px;
+      height: 17px;
+      background: url("../images/icons/icon-right-arrow-large-black.svg")
+        no-repeat center;
+
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        // transform: translate(-50%, -50%) rotate(180deg);
+        // width: 20px;
+        // height: 17px;
+        background: url("../images/icons/icon-right-arrow-large-yellow.svg")
+          no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    // Colour variations
+
+    &--disabled {
+      border-color: getcolor("grey");
+      //border: none;
+      &:hover {
+        border-color: getcolor("grey");
+      }
+
+      &::after {
+        background: url("../images/icons/icon-arrow-grey.svg") no-repeat center
+          center;
+      }
+    }
+
+    &--yellow-hover {
+      margin-right: to-rem(12);
+
+      vertical-align: middle;
+      &:hover {
+        background-color: getcolor("yellow");
+      }
+    }
+  }
+
+  &--arrow-download {
+    &::after {
+      transform: translate(-50%, -50%);
+      background: url("../images/icons/icon-arrow-download.svg") no-repeat
+        center center;
+      @include bp($button_transition_width) {
+        transition: background-color 500ms ease-in-out;
+      }
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-arrow-download-yellow.svg")
+        no-repeat center center;
+    }
+  }
+
+  &--arrow-external-link {
+    &::after {
+      transform: translate(-50%, -50%);
+      background: url("../images/icons/icon-external-link.svg") no-repeat center
+        center;
+      // transition: background-color 500ms ease-in-out;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-external-link-yellow.svg") no-repeat
+        center center;
+    }
+  }
+
+  &--arrow-right-copy {
+    &::after {
+      background: url("../images/icons/icon-right-arrow-large-black.svg")
+        no-repeat center center;
+    }
+    &:hover::after {
+      background: url("../images/icons/icon-right-arrow-large-black.svg")
+        no-repeat center center;
+    }
+  }
+
+  &--cross {
+    &::after {
+      border: 1px solid getcolor("black");
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      transform: translate(-50%, -50%) rotate(-180deg);
+      background: url("../images/icons/icon-cross.svg") no-repeat center center;
+    }
+
+    &:hover::after {
+      background: url("../images/icons/icon-cross-white.svg") no-repeat center
+        center;
+      background-color: getcolor("black");
+    }
+  }
+
+  // &--arrow-left {
+  //   &::after {
+  //     transform: translate(-50%, -50%) rotate(180deg);
+  //     width: to-rem(32);
+  //     height: to-rem(32);
+  //     background: url("../images/icons/icon-arrow.svg") no-repeat center center;
+  //   }
+  // }
+
+  &--icon-plus {
+    //  background-color: red;
+    &::after {
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+
+      background-image: url("../images/icons/icon-plus.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      &::after {
+        transform: translate(-50%, -50%);
+        background-image: url("../images/icons/icon-minus1-yellow.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &--black {
+    background-color: getcolor("charcoal-grey");
+    border: none;
+    &:hover {
+      background-color: getcolor("yellow");
+      border-color: getcolor("yellow");
+    }
+  }
+
+  &--yellow {
+    background-color: getcolor("yellow");
+    border: solid 1px getcolor("yellow");
+
+    &:hover {
+      background-color: getcolor("charcoal-grey");
+      border: solid 1px getcolor("charcoal-grey");
+    }
+  }
+
+  // Changes the size of the large buttons between desktop and laptop
+  &--responsive {
+    width: 44px;
+    height: 44px;
+
+    @include bp(lap) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  // medium buttons have their own responsive sizes
+
+  &--medium {
+    width: 33px;
+    height: 33px;
+
+    &::after {
+      //top: 52%;
+      width: 16px;
+      height: 16px;
+    }
+
+    @include bp(lap) {
+      width: 40px;
+      height: 40px;
+
+      &::after {
+        //top: 52%;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  // small buttons are same size on desktop and mobile
+  &--small {
+    display: block;
+    width: 33px;
+    height: 33px;
+
+    &::after {
+      width: 16px;
+      height: 16px;
+    }
+
+    @include bp(lap) {
+      width: 33px;
+      height: 33px;
+      //background-color: red;
+
+      &::after {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

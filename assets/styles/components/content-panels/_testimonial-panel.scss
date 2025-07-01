@@ -1,0 +1,224 @@
+&__testimonial-panel {
+  h2 {
+    margin: 0 0 60px;
+    @include bp(lap) {
+      margin: 0 0 80px;
+    }
+
+    @include bp(wide) {
+      margin: 0 0 100px;
+    }
+  }
+
+  .content-container {
+    &__row {
+      .row-container {
+        @include bp(lap) {
+          display: flex;
+
+          gap: 80px;
+          // Note this matches the column image panel which this panel sits after quite often so is aligned.
+          @include bp(1270px) {
+            gap: 140px;
+          }
+          justify-content: space-between;
+        }
+
+        border-bottom: 1px solid getcolor("grey3");
+
+        padding-bottom: 52px;
+        margin-bottom: 52px;
+
+        @include bp(lap) {
+          padding-bottom: 72px;
+          margin-bottom: 72px;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: initial;
+          margin-bottom: initial;
+        }
+
+        p {
+          margin: 0;
+        }
+
+        &__col1 {
+          box-sizing: border-box;
+          margin-bottom: 40px;
+          @include bp(lap) {
+            // Don't change column width as it matches other panel on investors page.
+            flex: 0 0 30%;
+            margin-bottom: 0;
+          }
+          h3.name {
+            font-size: to-rem(32);
+            line-height: to-rem(40);
+            font-weight: 400;
+            margin: 0 0 8px;
+          }
+
+          p.job-title {
+            margin-bottom: 24px;
+            @include bp(wide) {
+              margin-bottom: 48px;
+            }
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-width: 225px;
+          }
+        }
+
+        &__col2 {
+          @include bp(lap) {
+            flex: 1 1 auto;
+          }
+
+          box-sizing: border-box;
+          p {
+            font-size: to-rem(24);
+            @include lhCrop(24);
+            line-height: to-rem(30);
+            font-weight: 400;
+            margin: 0;
+
+            &:first-of-type {
+              position: relative;
+              &:before {
+                content: "“";
+                position: absolute;
+                left: -10px;
+                font-size: to-rem(24);
+                line-height: to-rem(30);
+                top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .quotes-slider-heading {
+    margin-bottom: 40px;
+    @include bp(lap) {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__col1 {
+      @include bp(lap) {
+        flex: 1 1 auto;
+      }
+
+      h2 {
+        margin: 0 0 20px;
+
+        @include bp(wide) {
+          margin: 0 0 100px;
+        }
+      }
+    }
+
+    &__col2 {
+      @include bp(lap) {
+        flex: 0 0 200px;
+      }
+      position: relative;
+
+      .quotes-slider__controls {
+        height: 55px;
+        width: fit-content;
+
+        @include bp(lap) {
+          position: absolute;
+          top: 50px;
+          right: 0;
+        }
+
+        &__button {
+          display: inline-block;
+          width: 55px;
+          height: 55px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .quotes-slider {
+    position: relative;
+    overflow: visible;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    &__slides-wrapper {
+      display: block;
+    }
+
+    &__slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      transition-property: transform;
+      transition-timing-function: var(
+        --swiper-wrapper-transition-timing-function,
+        initial
+      );
+      box-sizing: content-box;
+    }
+
+    &__slide {
+      flex-shrink: 0;
+      display: block;
+      width: 100%;
+      position: relative;
+      transition-property: transform;
+
+      background: linear-gradient(to right, #fcbe00 45%, #ff0);
+      border-radius: $border-radius-lg;
+
+      .content-container {
+        padding: 50px;
+        text-align: center;
+        h3.name {
+          font-size: to-rem(32);
+          line-height: to-rem(40);
+          font-weight: 400;
+          margin: 0 0 8px;
+        }
+
+        p.job-title {
+          font-weight: 500;
+          margin-bottom: 24px;
+
+          font-size: to-rem(20);
+          @include bp(wide) {
+            font-size: to-rem(24);
+            margin-bottom: 32px;
+          }
+        }
+
+        p {
+          max-width: 650px;
+          margin: 0 auto;
+
+          font-size: to-rem(20);
+          @include bp(wide) {
+            font-size: to-rem(24);
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,562 @@
+.main-menu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 80px;
+  bottom: 0px;
+  left: 4px;
+  right: 0px;
+  z-index: 100;
+  transform: translateY(-110%);
+  opacity: 0;
+  transition: opacity 0s;
+  border-radius: 0px;
+  box-sizing: border-box;
+  padding: 20px;
+  width: calc(100%); //(100% - 4px);
+  height: calc(100vh);
+  padding-bottom: 200px;
+  &--open {
+    transform: translateX(0);
+    transition: opacity 2s ease-out;
+    opacity: 1;
+    overflow-y: auto;
+  }
+
+  @include bp($mobile-menu-snap) {
+    display: initial;
+    overflow: initial;
+    position: static;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    transform: translateY(0);
+    height: auto;
+    padding: 0;
+    opacity: 1;
+    padding-bottom: 0;
+  }
+
+  background-color: getcolor("white");
+  @include bp($mobile-menu-snap) {
+    background-color: transparent;
+  }
+
+  .buttonV2 {
+    display: block;
+    text-align: center;
+    background: getcolor("yellow");
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 48px;
+    padding: 20px 20px 19px;
+
+    &:hover {
+      color: getcolor("white");
+    }
+
+    @include bp($mobile-menu-snap) {
+      display: none;
+    }
+  }
+
+  ul {
+    overflow-y: auto;
+    padding-bottom: 80px;
+
+    li {
+      padding-bottom: 48px;
+      margin-right: 35px;
+      @include bp($mobile-menu-adjust-desktop) {
+        margin-right: 70px;
+        padding-bottom: initial;
+        overflow-y: unset;
+      }
+    }
+
+    @include bp($mobile-menu-snap) {
+      overflow-y: unset;
+      padding-bottom: initial;
+    }
+  }
+
+  @include bp($mobile-menu-snap) {
+    display: flex;
+    align-items: center;
+    position: static;
+    width: auto;
+    transform: none;
+    transition: unset;
+    height: unset;
+    padding: 0;
+    //padding-top: to-rem(6);
+    border-radius: 0px;
+    margin: 0 auto;
+
+    &::after {
+      display: none;
+    }
+
+    position: relative;
+  }
+
+  &--open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .menu-item {
+      a {
+        display: block;
+        color: getcolor("charcoal-grey");
+        text-decoration: none;
+        transition: color 0.3s linear;
+        user-select: none;
+        font-style: normal;
+
+        font-weight: 400;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        font-size: to-rem(38);
+
+        &:focus {
+          background-color: transparent;
+        }
+        &:hover {
+          color: getcolor("charcoal-grey");
+        }
+
+        line-height: unset;
+        @include bp($mobile-menu-snap) {
+          font-size: to-rem(16);
+        }
+
+        @include bp($mobile-menu-snap) {
+          padding: initial;
+
+          color: getcolor("charcoal-grey");
+
+          // hover on menu item for underline - for non-child options it is full width - there is an override below for child options
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: to-rem(-18);
+            width: 100%;
+            opacity: 0;
+            height: 1px;
+            background-color: getcolor("charcoal-grey");
+            transition: opacity 100ms ease-in-out;
+          }
+
+          &:hover::after {
+            height: 1px;
+            transition: opacity 100ms ease-in-out;
+            opacity: 1;
+          }
+        }
+      }
+
+      &.menu-item-has-children {
+        box-sizing: border-box;
+        //display: flex;
+        // flex-wrap: wrap;
+        // min-height: 82px;
+        //new
+        // width: 100%;
+
+        @include bp($mobile-menu-snap) {
+          display: block;
+          box-sizing: border-box;
+          min-height: unset;
+        }
+        //align-items: center;
+        transition: color 0.3s linear;
+        cursor: pointer;
+
+        // Padding for mobile
+        li {
+          padding: 10px 0;
+          @include bp($mobile-menu-snap) {
+            padding: 0;
+          }
+        }
+
+        // a {
+        //   width: 100%;
+        //   order: 1;
+        //   flex: 0 0 calc(100% - 20px);
+        //   white-space: nowrap;
+
+        //   @include bp($mobile-menu-snap) {
+        //     flex: auto;
+        //     padding-right: 5px;
+        //   }
+        // }
+
+        // @include bp($mobile-menu-snap) {
+        //   a {
+        //     width: 100%;
+        //   }
+        // }
+
+        // This is for the submenu - so the positioning is relative to the UL menu on desktop.
+        position: relative;
+        @include bp($mobile-menu-snap) {
+          position: unset;
+        }
+
+        a {
+          //  background-color: green;
+          display: block;
+          //  background-color: green;
+          width: 100%;
+          order: 1;
+          white-space: nowrap;
+          position: relative;
+
+          @include bp($mobile-menu-snap) {
+            margin-right: 5px;
+            position: relative;
+
+            // hover on menu item for underline - for non-child options it is full width - there is an override below for child options
+            &:hover::after {
+              width: calc(100% - 21px);
+            }
+          }
+        }
+
+        // For mobile the arrow is on the menuitem where as for desktop it is after the hyperlink.
+        // This is the desktop link. It only shows on the first one so it does not show in sub menu.
+        > a {
+          @include bp($mobile-menu-snap) {
+            padding-right: 8px;
+            position: relative;
+
+            &::before {
+              position: absolute;
+              content: "";
+              @include bp($mobile-menu-snap) {
+                width: 12px;
+                height: 8px;
+                right: 0;
+                top: 12px;
+                transition: all 200ms ease;
+                background-image: url("../images/menu-icons/icon-arrow-down.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+              }
+              //
+            }
+          }
+
+          // This is the hover for desktop arrows
+          &:hover::before,
+          &:focus-within::before {
+            //background-image: url("../images/menu-icons/icon-arrow-up.svg");
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            transform: rotate(-180deg);
+            transition: all 200ms ease;
+          }
+
+          &:hover {
+            > a {
+              color: getcolor("charcoal-grey");
+            }
+          }
+        }
+
+        // @include bp($mobile-menu-snap) {
+        //   a {
+        //     width: 100%;
+        //   }
+        // }
+
+        // &::after {
+        //   position: relative;
+        //   order: 2;
+        //   flex: 0 0 20px;
+        //   @include bp($mobile-menu-snap) {
+        //     flex: auto;
+        //   }
+
+        //   content: "";
+        //   display: inline-block;
+        //   // width: to-rem(10);
+        //   // height: to-rem(18);
+        //   background-color: red;
+        //   margin-top: 10px;
+
+        //   @include bp($mobile-menu-snap) {
+        //     width: to-rem(12);
+        //     height: to-rem(8);
+        //     margin-top: 0px;
+        //   }
+
+        //   transition: all 200ms ease;
+        //   //  margin-top: 8px;
+        //   background-image: url("../images/menu-icons/icon-arrow-down.svg");
+        //   background-size: contain;
+        //   background-repeat: no-repeat;
+
+        //   //
+        // }
+
+        //z-index: 1;
+        // For mobile the arrow is on the menuitem where as for desktop it is after the hyperlink.
+        // This is the mobile.
+        &::before {
+          position: absolute;
+          //order: 2;
+          //flex: 0 0 20px;
+          // @include bp($mobile-menu-snap) {
+          //   flex: auto;
+          // }
+          content: "";
+          top: 8px;
+          right: 0;
+          display: block;
+          width: 28px;
+          height: 22px;
+          pointer-events: initial;
+          transition: all 200ms ease;
+          background-image: url("../images/menu-icons/icon-arrow-down.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          //z-index: 0;
+
+          @include bp($mobile-menu-snap) {
+            content: unset;
+            // width: to-rem(12);
+            // height: to-rem(8);
+            // right: -15px;
+            // top: 12px;
+            // //margin-top: 0px;
+          }
+
+          //
+        }
+
+        &--open {
+          > a {
+            color: getcolor("charcoal-grey");
+
+            // @include bp($mobile-menu-snap) {
+            //   color: getcolor("charcoal-grey");
+            // }
+          }
+
+          // @include bp($mobile-menu-snap) {
+          //   color: getcolor("charcoal-grey");
+          // }
+
+          // This is the state for mobile arrow position
+          &::before {
+            top: 4px;
+            transform: rotate(-180deg);
+            transition: all 200ms ease;
+
+            @include bp($mobile-menu-snap) {
+              content: unset;
+            }
+          }
+
+          // @include bp($mobile-menu-snap) {
+          //   &:hover::after,
+          //   &:focus-within::after {
+          //     background-image: url("../images/menu-icons/icon-arrow-up.svg");
+          //     transition: background-image 200ms ease;
+          //   }
+          // }
+        }
+      }
+
+      &.current-menu-item {
+        a {
+          color: getcolor("charcoal-grey");
+
+          // &::after {
+          //   content: "";
+          //   position: absolute;
+          //   left: 0;
+          //   bottom: to-rem(-5);
+          //   width: 100%;
+          //   opacity: 1;
+          //   height: to-rem(1);
+          //   background-color: getcolor("charcoal-grey");
+          //   transition: opacity 100ms ease-in-out;
+          // }
+
+          @include bp($mobile-menu-snap) {
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -18px;
+              width: 100%;
+              opacity: 1;
+              height: 1px;
+              background-color: getcolor("charcoal-grey");
+              transition: opacity 100ms ease-in-out;
+            }
+          }
+        }
+
+        // This changes the underline for active page for items that have an arrow
+        &.menu-item-has-children {
+          a {
+            @include bp($mobile-menu-snap) {
+              &::after {
+                width: calc(100% - 21px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease-out;
+      order: 3;
+      flex: 0 0 100%;
+
+      box-sizing: border-box;
+      padding-top: 20px;
+
+      @include bp($mobile-menu-snap) {
+        // overflow: visible;
+        columns: 2;
+        column-gap: 10px;
+        padding: 0 0;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition:
+          opacity 600ms ease-in-out,
+          transform 600ms ease-in-out;
+      }
+
+      .menu-item {
+        @include bp($mobile-menu-snap) {
+          padding-bottom: 20px !important;
+        }
+
+        a {
+          font-size: 21px;
+
+          line-height: 1.4;
+          padding-left: 40px;
+
+          color: getcolor("charcoal-grey");
+
+          &::after {
+            content: none;
+          }
+
+          @include bp($mobile-menu-snap) {
+            // color: getcolor("dusty-brown");
+            color: rgba(30, 30, 30, 0.6);
+
+            transition: none;
+
+            padding: 0;
+
+            &:hover {
+              color: getcolor("charcoal-grey");
+              //  background: unset;
+              //background-position: center;
+              //background-color: unset !important;
+              //border-bottom: 0.1rem solid getcolor("blue");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > ul {
+    @include bp($mobile-menu-snap) {
+      display: flex;
+      align-items: center;
+
+      > .menu-item {
+        padding: 0rem;
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        > a {
+          font-size: to-rem(18);
+
+          //padding: 0.4rem 2.5rem;
+        }
+
+        // &.current-menu-item {
+        //   a {
+        //     color: red;
+        //   }
+        // }
+
+        .sub-menu {
+          display: none;
+          height: auto;
+          position: absolute;
+          top: calc(100% - 1px);
+          left: 0;
+          right: 0;
+          width: 100%;
+          // box-sizing: border-box;
+          padding-top: to-rem(70);
+          // padding-bottom: to-rem(70);
+
+          //background-color: red;
+
+          margin-left: 0;
+          margin-right: 0;
+          z-index: 100;
+        }
+
+        &.menu-item-has-children {
+          // // Removed this as it only works when you have sub menus relative to top menu
+          // /* Create bridge for hover state between button and sub menu. */
+          // &::after {
+          //   content: "";
+          //   display: block;
+          //   height: 20px;
+          //   position: absolute;
+          //   top: calc(100% + 20px);
+          //   left: 0;
+          //   right: 0;
+          //   width: 100px;
+          //   // background-color: green;
+          // }
+
+          @include bp($mobile-menu-snap) {
+            &:hover > .sub-menu {
+              display: block;
+              color: getcolor("charcoal-grey");
+            }
+          }
+
+          .sub-menu {
+            a {
+              font-size: to-rem(24);
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

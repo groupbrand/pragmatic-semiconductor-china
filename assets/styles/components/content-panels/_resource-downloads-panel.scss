@@ -1,0 +1,165 @@
+&__resource-downloads-panel {
+  position: relative;
+  z-index: 10;
+
+  // padding-top: to-rem(20);
+  // @include bp(lap) {
+  //   padding-top: to-rem(60);
+  // }
+
+  &.override-generic-settings {
+    // Padding bottoms also need adjusting by 50px which is tricky as they can be set by either than panel, or the inset panel
+    // and can also be adjusted in the CMS.
+    padding-bottom: 30px !important;
+
+    @include bp(wide) {
+      padding-bottom: 80px !important;
+    }
+  }
+
+  .content-container {
+    &.move-container-up {
+      // Typically this would be 50px - but the text is not aligned to top of panel where as download icon is.
+
+      margin-top: -20px;
+
+      @include bp(lap) {
+        margin-top: -50px;
+      }
+      @include bp(wide) {
+        margin-top: -50px;
+      }
+    }
+
+    &__row {
+      border-bottom: 1px solid rgba(51, 51, 51, 0.15);
+
+      &:last-of-type {
+        border-bottom: 1px solid transparent;
+      }
+      @include bp(lap) {
+        // Overrides for previous containers border removal on hover
+
+        &:has(+ .content-container__row:hover) {
+          border-bottom: solid 1px transparent;
+        }
+        &:hover {
+          border-bottom: solid 1px transparent;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      .link-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        position: relative;
+
+        &:hover::before {
+          transform: scaleY(1);
+        }
+
+        &::before {
+          @include bp(lap) {
+            //   border-bottom: 1px transparent solid;
+            background-color: getcolor("yellow");
+            border-radius: $border-radius-sm;
+            content: "";
+
+            height: 100%;
+            left: -20px;
+            right: -20px;
+            @include bp(wide) {
+              left: -40px;
+              right: -40px;
+            }
+
+            position: absolute;
+            top: 0;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition:
+              transform 0.75s cubic-bezier(0.19, 1, 0.22, 1),
+              left 0.3s ease,
+              right 0.3s ease;
+            // width: calc(100% + to-rem(40));
+            // z-index: -1;
+          }
+        }
+
+        &__col1 {
+          flex: 1 1 auto;
+
+          h3 {
+            font-size: to-rem(40);
+            color: getcolor("charcoal-grey");
+            margin: 0;
+            padding: 40px 0;
+            position: relative;
+            z-index: 2;
+
+            @include bp(lap) {
+              font-size: to-rem(50);
+              line-height: to-rem(54);
+              padding-right: 50px;
+            }
+
+            @include bp(wide) {
+              font-size: to-rem(64);
+              line-height: to-rem(68);
+              padding-right: 50px;
+            }
+          }
+        }
+
+        &__col2 {
+          flex: 0 0 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          align-items: center;
+
+          @include bp(lap) {
+            flex: 0 0 25%;
+            flex-direction: row-reverse;
+            gap: 23px;
+          }
+
+          span {
+            position: relative;
+            z-index: 10;
+            font-size: to-rem(14);
+            @include bp(lap) {
+              font-size: to-rem(16);
+            }
+            color: getcolor("charcoal-grey");
+            display: block;
+            margin: 0;
+
+            line-height: 1;
+          }
+        }
+      }
+
+      // Over ride for button hover
+      &:hover {
+        .link-container__col2 {
+          .circle-button {
+            background-color: getcolor("charcoal-grey") !important;
+            &:after {
+              background: url("../images/icons/icon-arrow-download-yellow.svg")
+                no-repeat center center;
+
+              background-size: contain;
+              height: 20px;
+              width: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

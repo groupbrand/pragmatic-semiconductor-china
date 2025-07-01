@@ -1,0 +1,56 @@
+&__text-visual-panel {
+  position: relative;
+
+  .crisp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: url("../images/decorators/decorator-wave.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    aspect-ratio: 50/ 10;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content-container {
+    position: relative;
+
+    margin-bottom: 150px;
+
+    @include bp(lap) {
+      margin-bottom: 0;
+    }
+
+    @include bp(890px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__col1 {
+      flex: 0 1 50%;
+      padding-right: 40px;
+
+      h3.section-title-small {
+        margin: 0;
+        margin: 0 0 24px;
+        @include bp(wide) {
+          margin: 0 0 32px;
+        }
+      }
+
+      p.description {
+        margin: 0 0 32px;
+        max-width: 549px;
+        @include bp(lap) {
+          margin: 0 0 40px;
+        }
+      }
+    }
+  }
+}

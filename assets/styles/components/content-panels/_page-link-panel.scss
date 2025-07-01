@@ -1,0 +1,233 @@
+&__page-link-panel {
+  position: relative;
+  z-index: 10;
+
+  // padding-top: to-rem(80);
+  // @include bp(lap) {
+  //   padding-top: to-rem(130);
+  // }
+
+  &.override-generic-settings {
+    // Padding bottoms also need adjusting by 50px which is tricky as they can be set by either than panel, or the inset panel
+    // and can also be adjusted in the CMS.
+    padding-bottom: 30px !important;
+    @include bp(lap) {
+      padding-bottom: 80px !important;
+    }
+  }
+  .content-container {
+    &.move-container-up {
+      margin-top: -50px;
+      @include bp(lap) {
+        margin-top: -50px;
+      }
+    }
+
+    &__row {
+      border-bottom: 1px solid rgba(51, 51, 51, 0.15);
+
+      &:last-of-type {
+        border-bottom: 1px solid transparent;
+      }
+      @include bp(lap) {
+        // Overrides for previous containers border removal on hover
+
+        &:has(+ .content-container__row:hover) {
+          border-bottom: solid 1px transparent;
+        }
+        &:hover {
+          border-bottom: solid 1px transparent;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      .link-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        position: relative;
+
+        &:hover::before {
+          transform: scaleY(1);
+        }
+
+        &::before {
+          @include bp(lap) {
+            //   border-bottom: 1px transparent solid;
+            background-color: getcolor("yellow");
+            border-radius: $border-radius-sm;
+            content: "";
+            height: 100%;
+            left: -20px;
+            right: -20px;
+            @include bp(wide) {
+              left: -40px;
+              right: -40px;
+            }
+            position: absolute;
+            top: 0;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition:
+              transform 0.75s cubic-bezier(0.19, 1, 0.22, 1),
+              left 0.3s ease,
+              right 0.3s ease;
+            // width: calc(100% + to-rem(40));
+            // z-index: -1;
+          }
+        }
+
+        &__col1 {
+          flex: 1 1 auto;
+
+          h3 {
+            font-size: to-rem(40);
+            color: getcolor("charcoal-grey");
+            margin: 0;
+            padding: 40px 0;
+            position: relative;
+            z-index: 2;
+
+            @include bp(lap) {
+              font-size: to-rem(50);
+              line-height: to-rem(54);
+              padding-right: 50px;
+            }
+
+            @include bp(wide) {
+              font-size: to-rem(64);
+              line-height: to-rem(68);
+              padding-right: 50px;
+            }
+          }
+        }
+
+        &__col2 {
+          flex: 0 0 30px;
+
+          .circle-button {
+            background-color: transparent;
+            border: solid 1px getcolor("charcoal-grey");
+
+            box-sizing: border-box;
+
+            &--arrow-right {
+              box-sizing: border-box;
+
+              &::after {
+                background: url("../images/icons/icon-right-arrow-large-black.svg")
+                  no-repeat center center;
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+
+      // Over ride for button hover
+      &:hover {
+        .link-container__col2 {
+          .circle-button {
+            border: solid 1px getcolor("charcoal-grey");
+            background-color: getcolor("charcoal-grey");
+            //border: solid 1px getcolor("white");
+
+            &--arrow-right {
+              box-sizing: border-box;
+              &::after {
+                background: url("../images/icons/icon-right-arrow-large-white.svg")
+                  no-repeat center center !important;
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Over rides for BG Colour
+  &.bgc-charcoal-grey {
+    h2,
+    h3 {
+      color: getcolor("white");
+    }
+
+    h3 {
+      margin-bottom: 32px;
+      @include bp(lap) {
+        margin-bottom: 48px;
+      }
+    }
+    .content-container {
+      &__row {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+        &:last-of-type {
+          border-bottom: 1px solid transparent;
+        }
+
+        .link-container {
+          &__col1 {
+            h3 {
+              color: getcolor("white");
+            }
+          }
+
+          &__col2 {
+            .circle-button {
+              background-color: getcolor("charcoal-grey");
+              border: solid 1px getcolor("white");
+
+              &--arrow-right {
+                box-sizing: border-box;
+                &::after {
+                  background: url("../images/icons/icon-right-arrow-large-white.svg")
+                    no-repeat center center !important;
+                  background-size: contain;
+                }
+              }
+            }
+          }
+        }
+
+        // Over ride for button hover
+        &:hover {
+          .link-container__col1 {
+            @include bp(lap) {
+              h3 {
+                color: getcolor("charcoal-grey");
+              }
+            }
+          }
+
+          .link-container__col2 {
+            .circle-button {
+              background-color: getcolor("white");
+              border: solid 1px getcolor("white");
+
+              &:after {
+                background: url("../images/icons/icon-right-arrow-large-black.svg")
+                  no-repeat center center;
+                background-size: contain;
+              }
+
+              @include bp(lap) {
+                background-color: getcolor("charcoal-grey");
+                border: solid 1px getcolor("yellow");
+                &:after {
+                  background: url("../images/icons/icon-right-arrow-large-white.svg")
+                    no-repeat center center;
+                  background-size: contain;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

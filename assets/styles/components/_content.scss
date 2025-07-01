@@ -1,0 +1,803 @@
+.content {
+  //
+  // Generic components used across all panels
+  //
+
+  h1.meta-heading,
+  h2.meta-heading {
+    font-weight: 400;
+    margin: 0 0 40px;
+    letter-spacing: 3px;
+    font-size: to-rem(14);
+    line-height: to-rem(22);
+    @include bp(wide) {
+      font-size: to-rem(16);
+      margin: 0 0 48px;
+      letter-spacing: 4px;
+    }
+  }
+
+  h1.page-hero-title,
+  h2.page-hero-title {
+    font-size: to-rem(58);
+    @include lhCrop(58);
+    line-height: to-rem(54);
+    font-weight: 500;
+    margin-bottom: 38px;
+
+    @include bp(lap) {
+      font-size: to-rem(68);
+      @include lhCrop(68);
+      line-height: to-rem(64);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(88);
+      @include lhCrop(88);
+      line-height: to-rem(82);
+      margin-bottom: 46px;
+    }
+  }
+
+  h1.page-internal-hero-title,
+  h2.page-internal-hero-title {
+    font-size: to-rem(52);
+    @include lhCrop(52);
+    font-weight: 500;
+    line-height: to-rem(48);
+    margin-bottom: 38px;
+
+    @include bp(lap) {
+      font-size: to-rem(62);
+      @include lhCrop(62);
+      line-height: to-rem(88);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(88);
+      @include lhCrop(88);
+      line-height: to-rem(82);
+      margin-bottom: 46px;
+    }
+  }
+
+  h2.section-title,
+  h3.section-title {
+    font-weight: 400;
+    font-size: to-rem(38);
+    @include lhCrop(38);
+    line-height: to-rem(54);
+
+    @include bp(lap) {
+      font-size: to-rem(48);
+      @include lhCrop(48);
+      line-height: to-rem(44);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(64);
+      line-height: to-rem(68);
+      @include lhCrop(64);
+    }
+  }
+
+  // Same desktop size as above, but with larger mobile size
+  h2.section-title-medium,
+  h3.section-title-medium {
+    font-weight: 400;
+    font-size: to-rem(44);
+    @include lhCrop(44);
+    line-height: to-rem(47);
+
+    @include bp(lap) {
+      font-size: to-rem(54);
+      @include lhCrop(54);
+      line-height: to-rem(50);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(64);
+      @include lhCrop(64);
+      line-height: to-rem(68);
+    }
+  }
+
+  h2.section-title-small,
+  h3.section-title-small {
+    font-weight: 400;
+    font-size: to-rem(38);
+    @include lhCrop(38);
+    line-height: to-rem(41);
+
+    @include bp(lap) {
+      font-size: to-rem(48);
+      @include lhCrop(48);
+      line-height: to-rem(44);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(56);
+      @include lhCrop(56);
+      line-height: to-rem(60);
+    }
+  }
+
+  h2.section-title-smaller,
+  h3.section-title-smaller {
+    font-weight: 400;
+    font-size: to-rem(22);
+    line-height: to-rem(30);
+
+    @include bp(lap) {
+      font-size: to-rem(27);
+      line-height: to-rem(35);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(32);
+      line-height: to-rem(40);
+    }
+  }
+
+  h1.article-heading {
+    font-weight: 400;
+    font-size: to-rem(52);
+    @include lhCrop(52);
+    line-height: to-rem(50);
+
+    @include bp(lap) {
+      font-size: to-rem(62);
+      @include lhCrop(62);
+      line-height: to-rem(60);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(72);
+      @include lhCrop(72);
+      line-height: to-rem(68);
+    }
+  }
+
+  h2.subheading,
+  h3.subheading,
+  h4.subheading {
+    font-weight: 400;
+    font-size: to-rem(30);
+    line-height: to-rem(34);
+
+    @include bp(wide) {
+      font-size: to-rem(35);
+      line-height: to-rem(39);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(40);
+      line-height: to-rem(44);
+    }
+  }
+
+  p.page-hero-introduction {
+    font-size: to-rem(38);
+    @include lhCrop(38);
+    line-height: to-rem(41);
+    margin-bottom: 60px;
+
+    @include bp(wide) {
+      font-size: to-rem(48);
+      @include lhCrop(48);
+      line-height: to-rem(51);
+    }
+
+    @include bp(wide) {
+      max-width: 880px;
+      font-size: to-rem(56);
+      @include lhCrop(56);
+      line-height: to-rem(60);
+      margin-bottom: 130px;
+    }
+  }
+
+  p.description {
+    font-size: to-rem(19);
+    font-weight: 400;
+    line-height: to-rem(28);
+  }
+
+  p {
+    span.introduction {
+      font-size: to-rem(21);
+      line-height: to-rem(28);
+      font-weight: 400;
+      margin: 0 0 40px;
+
+      @include bp(lap) {
+        font-size: to-rem(22);
+        line-height: to-rem(29);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(24);
+        @include lhCrop(24);
+        line-height: to-rem(32);
+      }
+    }
+  }
+
+  // Used to hide and show desktop and laptop images
+
+  .image-desktop {
+    display: none !important;
+    @include bp(lap) {
+      display: block !important;
+    }
+  }
+
+  .image-mobile {
+    display: block !important;
+    @include bp(lap) {
+      display: none !important;
+    }
+  }
+
+  a.cross-link {
+    font-size: to-rem(38);
+    line-height: to-rem(41);
+    font-weight: 400;
+    color: getcolor("white");
+    text-decoration: none;
+    padding-bottom: 60px;
+
+    @include bp(lap) {
+      font-size: to-rem(48);
+      line-height: to-rem(51);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(56);
+      line-height: to-rem(60);
+      padding-bottom: 0;
+    }
+  }
+
+  // This is a tag that allows us to manually add a CR to a text string which only displays on mobile
+  span.mobile-br {
+    display: block;
+    @include bp(600px) {
+      display: inline-block;
+    }
+  }
+
+  .news-header {
+    font-size: to-rem(40);
+  }
+
+  .card-details {
+    font-size: to-rem(14);
+    line-height: to-rem(17);
+    margin: 0 0 3px;
+    letter-spacing: 2px;
+
+    @include bp(lap) {
+      font-size: to-rem(16);
+      line-height: to-rem(22);
+      margin: 0 0 6px;
+    }
+
+    &:last-of-type {
+      margin: 0;
+      @include bp(lap) {
+        margin: 0;
+      }
+    }
+  }
+
+  .card-tag {
+    font-size: to-rem(12);
+    line-height: 1;
+    margin: 0;
+    padding: 5px 10px 6px;
+
+    @include bp(lap) {
+      padding: 5px 10px 6px;
+    }
+    color: getcolor("charcoal-grey");
+    border: solid 1px getcolor("charcoal-grey");
+    border-radius: 20px;
+    width: fit-content;
+    white-space: nowrap;
+
+    &--mb {
+      margin-bottom: 30px;
+    }
+  }
+
+  .card-title {
+    font-size: to-rem(21);
+    line-height: to-rem(28);
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include bp(wide) {
+      font-size: to-rem(24);
+      line-height: to-rem(32);
+      margin-bottom: 28px;
+    }
+
+    font-weight: normal;
+  }
+
+  .back-container {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    &__col {
+      flex: 0 0 auto;
+      &:first-of-type {
+        margin-right: 5px;
+        height: 35px;
+      }
+      font-size: to-rem(16);
+      line-height: to-rem(22);
+    }
+  }
+
+  //
+  // Hide BR tags on desktop and mobile
+  //
+
+  span.br-mobile {
+    display: block;
+    width: 0;
+    @include bp(lap) {
+      display: inline-block;
+      width: 1rem;
+    }
+  }
+
+  span.br-desk {
+    display: inline-block;
+    width: 1rem;
+
+    @include bp(lap) {
+      display: block;
+      width: 0;
+    }
+  }
+
+  //
+  // Used for all sections that have a background image that changes for desktop and mobile
+  //
+
+  .bg-image-desktop {
+    z-index: 1;
+    display: none;
+    @include bp(lap) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .bg-image-mobile {
+    z-index: 1;
+    display: block;
+    @include bp(lap) {
+      display: none;
+    }
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  //
+  // Generic Component Classes
+  //
+
+  &.tp-none {
+    padding-top: 0px;
+    @include bp(lap) {
+      padding-top: 0px;
+    }
+  }
+
+  &.bp-none {
+    padding-bottom: 0px;
+    @include bp(lap) {
+      padding-bottom: 0px;
+    }
+  }
+
+  // Used for when heading is at top of page behind nav
+  &.tp-large {
+    padding-top: 126px;
+    @include bp(lap) {
+      padding-top: 202px;
+    }
+  }
+
+  &.bp-large {
+    padding-bottom: 126px;
+    @include bp(lap) {
+      padding-bottom: 202px;
+    }
+  }
+
+  &.tp-extra-large {
+    padding-top: 126px;
+    @include bp(lap) {
+      padding-top: 202px;
+    }
+  }
+
+  &.bp-extra-large {
+    padding-bottom: 146px;
+    @include bp(lap) {
+      padding-bottom: 222px;
+    }
+  }
+
+  &.tp-small {
+    padding-top: 20px;
+    @include bp(lap) {
+      padding-top: 40px;
+    }
+  }
+
+  &.bp-small {
+    padding-bottom: 20px;
+    @include bp(lap) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &.tp-medium {
+    padding-top: 60px;
+    @include bp(lap) {
+      padding-top: 80px;
+    }
+  }
+
+  &.bp-medium {
+    padding-bottom: 60px;
+    @include bp(lap) {
+      padding-bottom: 80px;
+    }
+  }
+
+  &.inset {
+    margin: to-rem($wide-gutter-mobile);
+
+    &--x {
+      margin: 0 to-rem($wide-gutter-mobile);
+    }
+
+    &--y {
+      margin: to-rem($wide-gutter-mobile) 0;
+    }
+
+    @include bp(lap) {
+      margin: to-rem($wide-gutter);
+
+      &--x {
+        margin: 0 to-rem($wide-gutter);
+      }
+
+      &--y {
+        margin: to-rem($wide-gutter) 0;
+      }
+    }
+
+    // Adjusts the mobile padding for an inset panel as it already has the margin applied. The other sizes should be the same as the container values.
+    .container {
+      padding: 0 calc(24px - 6px); // Wide Gutter Mobile
+      // @include bp(lap) {
+      //   padding: 0 calc(24px - 8px); // Wide Gutter
+      // }
+      @include bp(lap) {
+        max-width: 1584px;
+        padding: 0 calc(40px - 8px); // Wide Gutter
+      }
+
+      @include bp(desk) {
+        //border: solid 1px blue;
+        max-width: 1584px;
+        padding: 0 calc(80px - 8px); // Wide Gutter
+      }
+
+      @include bp(wide) {
+        //border: solid 1px blue;
+        max-width: 1584px;
+        padding: 0 calc(130px - 8px); // Wide Gutter
+      }
+
+      &--narrow {
+        @include bp(lap) {
+          max-width: 900px;
+          padding: 0 5px;
+        }
+
+        @include bp(desk) {
+          max-width: 900px;
+          padding: 0 5px;
+        }
+      }
+
+      &--narrow {
+        @include bp(lap) {
+          max-width: 888px;
+          padding: 0 2rem;
+        }
+      }
+    }
+  }
+
+  // This is only set as an opton if an inset panel is set
+  &.outer-bgc-charcoal-grey {
+    position: relative;
+
+    &:before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+
+      background-color: getcolor("charcoal-grey");
+    }
+  }
+  // .inset-bg {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+
+  //   background-color: red;
+  // }
+
+  &.ir-default {
+    border-radius: 10px;
+  }
+
+  &.ir-notop {
+    margin-top: 0;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &.ir-nobottom {
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &.ir-nonone {
+    border-radius: 0;
+  }
+
+  // Move panel up - should match the panel paddings
+  &.mpu {
+    margin-top: -80px;
+    @include bp(wide) {
+      margin-top: -130px;
+    }
+  }
+
+  //
+  // Colours
+  //
+
+  &.bgc-grey {
+    background-color: getcolor("medium-gray");
+  }
+
+  &.bgc-yellow {
+    background-color: getcolor("yellow");
+  }
+
+  &.bgc-purple {
+    background-color: getcolor("purple");
+  }
+
+  &.bgc-floral-white {
+    background-color: getcolor("floral-white");
+  }
+
+  &.bgc-charcoal-grey {
+    background-color: getcolor("charcoal-grey");
+  }
+
+  &.bgc-dusty-blue {
+    background-color: getcolor("dusty-blue");
+  }
+
+  &.bgc-orange {
+    background-color: getcolor("orange");
+  }
+
+  &.bgc-steel-blue {
+    background-color: getcolor("steel-blue");
+  }
+
+  &.bgc-pale-yellow {
+    background-color: getcolor("pale-yellow");
+  }
+
+  &.bgc-pale-yellow1 {
+    background-color: getcolor("pale-yellow1");
+  }
+
+  &.bgc-turquoise {
+    background-color: getcolor("turquoise");
+  }
+
+  &.bgc-yellow-orange-grad {
+    background: linear-gradient(123deg, #ffff00 22%, #fcbe00 68%);
+  }
+
+  &.bgc-orange-yellow-grad {
+    background: linear-gradient(
+      to right,
+      rgba(252, 190, 0, 1) 45%,
+      rgba(255, 255, 0, 1) 100%
+    );
+  }
+
+  &.bgc-orange-yellow-grad2 {
+    background: linear-gradient(
+      135deg,
+      rgba(253, 221, 1, 1) 0%,
+      rgba(254, 238, 0, 1) 50%,
+      rgba(255, 255, 0, 1) 100%
+    );
+  }
+
+  &.bgc-green {
+    background-color: getcolor("green");
+  }
+
+  &.bgc-salmon {
+    background-color: getcolor("salmon");
+  }
+
+  &__misc-hero-panel {
+    padding: 16rem 0px 0.4rem;
+
+    h1 {
+      margin: 0 0 4rem;
+    }
+  }
+
+  //
+  // Custom Classes: These can be added in CMS to override standard settings.
+  //
+
+  // Used to Image-Text_panel on home page.
+  &.small-top-padding-mobile {
+    padding-top: 20px;
+
+    @include bp(1150px) {
+      padding: 130px 0;
+    }
+  }
+
+  &.custom-page-hero-title-46 {
+    h2 {
+      font-size: to-rem(46);
+      @include lhCrop(46);
+      line-height: to-rem(50);
+
+      @include bp(lap) {
+        font-size: to-rem(68);
+        @include lhCrop(68);
+        line-height: to-rem(64);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(88);
+        @include lhCrop(88);
+        line-height: to-rem(82);
+        margin-bottom: 46px;
+      }
+    }
+  }
+
+  //
+  // Include Panels
+  //
+
+  @import "404-panel";
+
+  //ACF Blocks
+  @import "./content-panels/hero-video-panel";
+  @import "./content-panels/simple-text-panel";
+  @import "./content-panels/accordion-image-panel";
+  @import "./content-panels/image-text-panel";
+  @import "./content-panels/brand-logos-panel";
+  @import "./content-panels/brand-moment-panel";
+  @import "./content-panels/news-promo-panel";
+  @import "./content-panels/news-promo-hero-panel";
+  @import "./content-panels/video-embed-side-image-hero-panel";
+  @import "./content-panels/info-grid-panel";
+  @import "./content-panels/two-column-cards-panel";
+  @import "./content-panels/two-column-panel";
+  @import "./content-panels/text-visual-panel";
+  @import "./content-panels/faq-panel";
+  @import "./content-panels/video-embed-hero-panel";
+  @import "./content-panels/cross-link-panel";
+  @import "./content-panels/internal-hero-panel";
+  @import "./content-panels/internal-hero-plain-panel";
+  @import "./content-panels/internal-hero-image-panel";
+  @import "./content-panels/image-content-promo-panel";
+  @import "./content-panels/two-column-content-promo-panel";
+  @import "./content-panels/content-promo-panel";
+  @import "./content-panels/content-promo-with-image-panel";
+  @import "./content-panels/page-link-panel";
+  @import "./content-panels/news-lister-panel";
+  @import "./content-panels/summary-content-panel";
+  @import "./content-panels/summary-content-video-panel";
+  @import "./content-panels/three-column-panel";
+  @import "./content-panels/related-articles-panel";
+  @import "./content-panels/column-image-panel";
+  @import "./content-panels/video-panel";
+  @import "./content-panels/menu-image-panel";
+  @import "./content-panels/media-content-panel";
+  @import "./content-panels/three-column-stats-panel";
+  @import "./content-panels/slider-panel";
+  @import "./content-panels/resource-panel";
+  @import "./content-panels/narrow-content-panel";
+  @import "./content-panels/resource-downloads-panel";
+  @import "./content-panels/intro-panel";
+  @import "./content-panels/logo-ticker-panel";
+  @import "./content-panels/testimonial-panel";
+  @import "./content-panels/contact-panel";
+  @import "./content-panels/tabbed-accordion-panel";
+  @import "./content-panels/three-column-border-panel";
+  @import "./content-panels/column-grid-panel";
+  @import "./content-panels/static-image-panel";
+  @import "./content-panels/image-slider-panel";
+  @import "./content-panels/content-promo-two-column-panel";
+  @import "./content-panels/media-content-small-panel";
+  @import "./content-panels/events-lister-panel";
+  @import "./content-panels/events-upcoming-promo-panel";
+  @import "./content-panels/accordion-steps-panel";
+
+  //Components
+  @import "./content-panels/components/news-item-container";
+  @import "./content-panels/components/generic-lister";
+  @import "./content-panels/components/generic-lister-pagination";
+  @import "./content-panels/components/social-shares";
+  @import "./content-panels/components/video-component";
+  @import "./content-panels/components/accordion";
+  @import "./content-panels/components/events-lister-container";
+
+  // Pages
+  @import "./content-panels/post-article";
+  @import "./content-panels/post-article-related-articles";
+}

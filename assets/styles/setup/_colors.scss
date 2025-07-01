@@ -1,0 +1,119 @@
+// Site Colours
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #c4c4c4;
+$color-off-black: #131313; //hsla(0, 0%, 100%, 0.075);
+$color-dark-grey: #666666; // white 65%
+$color-mid-grey: #999999; // Used for intro sub text
+$color-dark-grey-lines: #444444; // used for dividing lines
+$color-yellow: #ffff00;
+$color-orange: #fcbe00;
+$color-charcoal-grey: #1e1e1e;
+$color-floral-white: #fffcf1;
+$color-pale-yellow: #ffdeac;
+$color-pale-yellow-40: #ffdeac66;
+$color-pale-yellow1: #fff9de;
+$color-grey1: #e0e0e0;
+$color-grey2: #a6a6a6;
+$color-grey3: #e0e0e0;
+$color-grey4: #e0e0e050;
+$color-medium-gray: #a5a5a5;
+$color-turquoise: #00e4c6;
+$color-purple: #b4a2ff;
+$color-dusty-brown: #6a4b4b;
+$color-dusty-gray: #918787;
+$color-dusty-blue: #143050;
+$color-charcoal-grey-50: #1e1e1e80;
+$color-charcoal-grey-20: #1e1e1e20;
+$color-charcoal-grey-15: #1e1e1e15;
+$color-green: #1add82;
+$color-steel-blue: #5f7dbc;
+$color-salmon: #ff9778;
+
+$color-dark-grey2: #888888;
+$color-off-black: #131313;
+
+// $color-brand-black: #272c45;
+// $color-brand-black-light: #36363b;
+// $color-sand: #d8c8ba;
+// $color-linen: #ecdfd0;
+// $color-gold: #a8a8a2;
+// $color-navy-blue: #272c45;
+// $color-white-pink: #faf7f3;
+// $color-red: #a54c39;
+// $color-green: #848768;
+
+// Generic Colours
+$c-body-text: $color-black;
+$c_hyperlink: $color-black;
+$c_hyperlink_hover: $color-black;
+
+/* 
+RGB values.
+*/
+$color-rgb-white: getrgb($color-white);
+$color-rgb-black: getrgb($color-black);
+$color-rgb-charcoal-grey: getrgb($color-charcoal-grey);
+$color-rgb-pale-yellow: getrgb($color-pale-yellow);
+$color-rgb-grey1: getrgb($color-grey1);
+//$color-rgb-linen: getrgb($color-linen);
+
+@include set-vars(
+  (
+    "white": $color-white,
+    "black": $color-black,
+    "grey": $color-grey,
+    "grey1": $color-grey1,
+    "grey2": $color-grey2,
+    "grey3": $color-grey3,
+    "grey4": $color-grey4,
+    "off_black": $color-off-black,
+    "yellow": $color-yellow,
+    "pale-yellow": $color-pale-yellow,
+    "pale-yellow1": $color-pale-yellow1,
+    "orange": $color-orange,
+    "charcoal-grey": $color-charcoal-grey,
+    "floral-white": $color-floral-white,
+    "medium-gray": $color-medium-gray,
+    "turquoise": $color-turquoise,
+    "purple": $color-purple,
+    "dusty-brown": $color-dusty-brown,
+    "dusty-gray": $color-dusty-gray,
+    "dusty-blue": $color-dusty-blue,
+    "pale-yellow-40": $color-pale-yellow-40,
+    "charcoal-grey-50": $color-charcoal-grey-50,
+    "charcoal-grey-20": $color-charcoal-grey-20,
+    "charcoal-grey-15": $color-charcoal-grey-15,
+    "mid_grey": $color-mid-grey,
+    "dark_grey": $color-dark-grey,
+    "dark_grey2": $color-dark-grey2,
+    "dark_grey_lines": $color-dark-grey-lines,
+    "green": $color-green,
+    "steel-blue": $color-steel-blue,
+    "salmon": $color-salmon,
+
+    // "sand": $color-sand,
+    // "linen": $color-linen,
+    // "navy_blue": $color-navy-blue,
+    // "brand_black": $color-brand-black,
+    // "brand_black_light": $color-brand-black-light,
+    // "gold": $color-gold,
+    // "white_pink": $color-white-pink,
+    // "red": $color-red,
+    // "green": $color-green,
+  ),
+  "color"
+);
+
+@include set-vars(
+  (
+    "white": $color-rgb-white,
+    "black": $color-rgb-black,
+    "pale-yellow": $color-rgb-pale-yellow,
+    "grey1": $color-rgb-grey1,
+    "charcoal-grey": $color-rgb-charcoal-grey,
+    //    "linen": $color-rgb-linen,,,
+  ),
+  "color-rgb"
+);

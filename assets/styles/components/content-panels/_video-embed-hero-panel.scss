@@ -1,0 +1,62 @@
+&__video-embed-hero-panel {
+  position: relative;
+  z-index: 2;
+
+  padding-top: $hero-padding-top-mobile;
+  padding-bottom: 140px;
+
+  @include bp(lap) {
+    padding-bottom: 140px;
+    padding-top: $hero-padding-top-lap;
+  }
+
+  @include bp(wide) {
+    padding-top: $hero-padding-top;
+    padding-bottom: 260px;
+  }
+
+  .content-container {
+    h2.page-hero-title {
+      max-width: 880px;
+
+      margin-bottom: 30px;
+      @include bp(lap) {
+        margin-bottom: 62px;
+      }
+    }
+
+    div.main-content {
+      font-size: to-rem(32);
+      @include lhCrop(32);
+      line-height: to-rem(35);
+      max-width: 1200px;
+
+      @include bp(lap) {
+        font-size: to-rem(46);
+        @include lhCrop(46);
+        line-height: to-rem(50);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(56);
+        @include lhCrop(56);
+        line-height: to-rem(60);
+      }
+    }
+  }
+
+  // Override for this panel for video-container
+  // .video-container--with-margin {
+  //   margin-bottom: 50px !important;
+  //   @include bp(lap) {
+  //     margin-bottom: 120px !important;
+  //   }
+  // }
+
+  .video-container {
+    max-width: 1100px;
+    @include bp(wide) {
+      max-width: 1700px;
+    }
+  }
+}

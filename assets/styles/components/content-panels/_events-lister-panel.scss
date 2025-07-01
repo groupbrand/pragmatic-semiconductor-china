@@ -1,0 +1,178 @@
+&__events-lister-panel {
+  position: relative;
+  z-index: 10;
+
+  &.bgc-charcoal-grey {
+    h2.section-title-medium,
+    h3 {
+      color: getcolor("white");
+    }
+
+    h3 {
+      margin-bottom: 32px;
+      @include bp(lap) {
+        margin-bottom: 48px;
+      }
+    }
+
+    // Posts Search
+    .posts-search {
+      &__form {
+        .filters {
+          li {
+            .name {
+              //background-color: red;
+              border: solid 1px getcolor("white") !important;
+              color: getcolor("white") !important;
+              &:hover {
+                cursor: pointer;
+                color: getcolor("charcoal-grey") !important;
+                background: getcolor("white") !important;
+                transition: all 0.3s ease-in-out;
+              }
+
+              &.active {
+                color: getcolor("charcoal-grey") !important;
+                background: getcolor("white") !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // These override the standard colours in the events-lister-container component.
+    .events-lister-container {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      .card-tag {
+        margin-bottom: 20px;
+        border: solid 1px getcolor("white");
+        color: getcolor("white");
+      }
+
+      .card-details {
+        color: getcolor("white");
+      }
+
+      &__col2 {
+        h2 {
+          color: getcolor("white");
+
+          margin-bottom: 24px;
+
+          @include bp(lap) {
+            margin-bottom: 0px;
+          }
+        }
+
+        // @include bp(lap) {
+        //   &:hover {
+        //     + .events-lister-container__col3 {
+        //       a {
+        //         &.button--arrow-open-link {
+        //           &:before {
+        //             background-color: getcolor("white");
+        //             border: solid 1px getcolor("white");
+        //           }
+
+        //           &:after {
+        //             background: url("../images/icons/icon-external-link-black.svg")
+        //               no-repeat center center;
+        //             background-size: contain;
+        //           }
+        //         }
+
+        //         &.button--arrow-right {
+        //           &:before {
+        //             background-color: getcolor("white");
+        //           }
+
+        //           &:after {
+        //             background: url("../images/icons/icon-right-arrow-black-white-copy.svg")
+        //               no-repeat center !important;
+        //             background-size: contain;
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+      }
+      &__col3 {
+        @include bp(lap) {
+          text-align: left;
+          flex: 0 0 150px;
+          text-align: right;
+        }
+
+        // .button--arrow-open-link {
+        //   background-color: getcolor("charcoal-grey");
+        //   border: solid 1px getcolor("white");
+        //   color: getcolor("white");
+
+        //   &:before {
+        //     background-color: getcolor("charcoal-grey");
+        //     border: solid 1px getcolor("white");
+        //   }
+
+        //   &:after {
+        //     background: url("../images/icons/icon-external-link-white.svg")
+        //       no-repeat center center;
+        //     background-size: contain;
+        //   }
+
+        //   &:hover {
+        //     &:before {
+        //       background-color: getcolor("white");
+        //       border: solid 1px getcolor("white");
+        //     }
+
+        //     &:after {
+        //       background: url("../images/icons/icon-external-link-black.svg")
+        //         no-repeat center center;
+        //       background-size: contain;
+        //     }
+        //   }
+        // }
+
+        // .button--arrow-right {
+        //   background-color: getcolor("charcoal-grey");
+        //   border: solid 1px getcolor("white");
+        //   color: getcolor("white");
+
+        //   &:before {
+        //     background-color: getcolor("charcoal-grey");
+        //     border: solid 1px getcolor("white");
+        //   }
+
+        //   &:after {
+        //     background: url("../images/icons/icon-right-arrow-white.svg")
+        //       no-repeat !important;
+        //     background-size: contain;
+        //   }
+
+        //   &:hover {
+        //     &:before {
+        //       background-color: getcolor("white");
+        //       border: solid 1px getcolor("white");
+        //     }
+
+        //     &:after {
+        //       background: url("../images/icons/icon-right-arrow-black-white-copy.svg")
+        //         no-repeat center !important;
+        //       background-size: contain;
+        //     }
+        //   }
+        // }
+      }
+    }
+
+    .posts-search__post {
+      &:last-of-type {
+        .events-lister-container {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

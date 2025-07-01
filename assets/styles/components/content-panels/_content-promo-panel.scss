@@ -1,0 +1,431 @@
+&__content-promo-panel {
+  h2 {
+    color: getcolor("charcoal-grey");
+    font-size: to-rem(52);
+    @include lhCrop(52);
+    font-weight: 400;
+    line-height: to-rem(50);
+    margin: 0 0 48px;
+
+    @include bp(lap) {
+      font-size: to-rem(62);
+      @include lhCrop(62);
+      line-height: to-rem(62);
+    }
+
+    @include bp(wide) {
+      font-size: to-rem(72);
+      @include lhCrop(72);
+      line-height: to-rem(68);
+      margin: 0 0 60px;
+    }
+
+    &.smaller-heading {
+      color: getcolor("charcoal-grey");
+      font-size: to-rem(44);
+      @include lhCrop(44);
+      line-height: to-rem(47);
+      margin: 0 0 24px;
+
+      @include bp(lap) {
+        font-size: to-rem(54);
+        @include lhCrop(54);
+        line-height: to-rem(58);
+      }
+
+      @include bp(wide) {
+        font-size: to-rem(64);
+        @include lhCrop(64);
+        line-height: to-rem(68);
+        margin: 0 0 32px;
+      }
+    }
+
+    max-width: 756px;
+  }
+
+  .introduction {
+    color: getcolor("charcoal-grey");
+    max-width: 550px;
+
+    font-size: to-rem(21);
+    line-height: to-rem(28);
+    margin: 0 0 40px;
+
+    @include bp(lap) {
+      font-size: to-rem(24);
+      line-height: to-rem(32);
+    }
+  }
+
+  // Over ride for button hover based on bg
+  // &.bgc-green {
+  //   a.button {
+  //     color: getcolor("green");
+
+  //     &::before {
+  //       border: 1px solid getcolor("green");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("green");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-arrow-right-green.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-large-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("green");
+
+  //     &::before {
+  //       border: 1px solid getcolor("green");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("green");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-green.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-grey {
+  //   a.button {
+  //     color: getcolor("grey");
+
+  //     &::before {
+  //       border: 1px solid getcolor("grey");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("grey");
+  //     }
+
+  //     &::after {
+  //       content: "";
+  //       background: url("../images/icons/icon-right-arrow-grey.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("grey");
+
+  //     &::before {
+  //       border: 1px solid getcolor("grey");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("grey");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-grey.svg") no-repeat
+  //         center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-salmon {
+  //   a.button {
+  //     color: getcolor("salmon");
+
+  //     &::before {
+  //       border: 1px solid getcolor("salmon");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("salmon");
+  //     }
+
+  //     &::after {
+  //       content: "";
+  //       background: url("../images/icons/icon-right-arrow-salmon.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-black.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("salmon");
+
+  //     &::before {
+  //       border: 1px solid getcolor("salmon");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("salmon");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-salmon.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-purple {
+  //   a.button {
+  //     color: getcolor("purple");
+
+  //     &::before {
+  //       border: 1px solid getcolor("purple");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("purple");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-purple.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-large-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("purple");
+
+  //     &::before {
+  //       border: 1px solid getcolor("purple");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("purple");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-purple1.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-orange {
+  //   a.button {
+  //     color: getcolor("orange");
+
+  //     &::before {
+  //       border: 1px solid getcolor("orange");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("orange");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-orange.svg") no-repeat
+  //         center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-large-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("orange");
+
+  //     &::before {
+  //       border: 1px solid getcolor("orange");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("orange");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-orange.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-steel-blue {
+  //   a.button {
+  //     color: getcolor("steel-blue");
+
+  //     &::before {
+  //       border: 1px solid getcolor("steel-blue");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("steel-blue");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-right-arrow-steel-blue.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-large-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("steel-blue");
+
+  //     &::before {
+  //       border: 1px solid getcolor("steel-blue");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("steel-blue");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-steel-blue.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-turquoise {
+  //   a.button {
+  //     color: getcolor("turquoise");
+
+  //     &::before {
+  //       border: 1px solid getcolor("turquoise");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("turquoise");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-arrow-right-turquoise.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-right-arrow-large-black.svg")
+  //         no-repeat center center;
+  //       background-size: contain;
+  //     }
+  //   }
+
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("turquoise");
+
+  //     &::before {
+  //       border: 1px solid getcolor("turquoise");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("turquoise");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-turquoise.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+
+  // &.bgc-yellow {
+  //   // External Link
+  //   a.button--arrow-open-link {
+  //     color: getcolor("yellow");
+
+  //     &::before {
+  //       border: 1px solid getcolor("yellow");
+  //     }
+
+  //     &:hover::before {
+  //       background-color: getcolor("yellow");
+  //     }
+
+  //     &::after {
+  //       background: url("../images/icons/icon-external-link-yellow2.svg")
+  //         no-repeat center center;
+  //     }
+
+  //     &:hover::after {
+  //       background: url("../images/icons/icon-external-link-black.svg")
+  //         no-repeat center center;
+  //     }
+  //   }
+  // }
+}
