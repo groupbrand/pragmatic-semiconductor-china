@@ -140,7 +140,7 @@
                 v-if="post.customFields.post_link_type == 'internal'"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--arrow-right buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >{{ this.config.text_strings["read"] }}</a
+                >{{ this.config.text_strings["Read"] }}</a
               >
               <a
                 v-if="post.customFields.post_link_type != 'internal'"
@@ -148,7 +148,7 @@
                 rel="noopener noreferrer"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--external-link buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >{{ this.config.text_strings["read"] }}</a
+                >{{ this.config.text_strings["Read"] }}</a
               >
             </div>
           </div>
