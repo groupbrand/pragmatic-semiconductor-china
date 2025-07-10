@@ -17,6 +17,14 @@ while (have_posts()) {
     $selected_articles = get_post_meta(get_the_ID(), 'related_articles', true);
 
 
+    $post_min_read = \Theme\Utils::get_static_translation('min read');
+    $post_min_label = \Theme\Utils::get_static_translation('min');
+    $post_share_label = \Theme\Utils::get_static_translation('Share');
+    $post_published_label = \Theme\Utils::get_static_translation('Published');
+    $post_back_to_news_link_label = \Theme\Utils::get_static_translation('Back to news');
+    $post_more_from_pragmatic_heading = \Theme\Utils::get_static_translation('More from Pragmatic');
+
+
     $author_details = '';
     if ($author) {
         $author_details .= $author;
@@ -48,7 +56,7 @@ while (have_posts()) {
                         <circle id="donut-segment" class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="1.5" stroke-dasharray="0 100" stroke-dashoffset="25"></circle>
                         <g class="donut-text">
                             <text y="50%" transform="translate(0, 2)">
-                                <tspan x="50%" text-anchor="middle" class="donut-info"><?php echo $mins_read; ?> min</tspan>
+                                <tspan x="50%" text-anchor="middle" class="donut-info"><?php echo $mins_read . ' ' . $post_min_label ?></tspan>
                             </text>
 
                         </g>
@@ -60,7 +68,7 @@ while (have_posts()) {
                 <div class="mobile-container__col1">
 
                     <?php if ($mins_read) {
-                        echo $mins_read . ' min read';
+                        echo $mins_read . ' ' . $post_min_read;
                     } ?>
                 </div>
 
@@ -73,23 +81,21 @@ while (have_posts()) {
                 <?php echo $category_tag; ?>
             </div>
 
-            <h3 class="label">Published</h3>
+            <h3 class="label"><?php echo $post_published_label; ?></h3>
             <p class="summary-details"><?php echo $item_date; ?></p>
 
             <?php if ($author_details) { ?>
-                <h3 class="label">Author</h3>
+                <h3 class="label">><?php echo $post_author_label; ?></h3>
                 <p class="summary-details"><?php echo $author_details; ?></p>
             <?php } ?>
 
-            <h3 class="label">Share</h3>
-            <?php echo \Theme\Utils::share_article(get_the_ID()); ?>
 
 
             <a href="/news-events/" class="back-container">
                 <div class="back-container__col1">
                     <div class="circle-buttonV2 circle-buttonV2--small circle-buttonV2--small--arrow-left"></div>
                 </div>
-                <div class="back-container__col2">Back to news</div>
+                <div class="back-container__col2"><?php echo $post_back_to_news_link_label; ?></div>
             </a>
 
         </div>
@@ -141,7 +147,7 @@ while (have_posts()) {
     // Render Related Articles Panel Block
     $content = '';
     $block = acf_get_block_type('acf/related-articles-panel');
-    $block['data']['heading'] = 'More from Pragmatic';
+    $block['data']['heading'] = $post_more_from_pragmatic_heading;
     $block['data']['related_articles'] = $selected_articles;
     $block['data']['generic_block_settings']['hide_panel'] = false;
     echo acf_rendered_block($block, $content, false);

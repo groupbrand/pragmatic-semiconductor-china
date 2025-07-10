@@ -168,11 +168,11 @@ class ACFBlocks
             array('core/freeform'),
         );
 
-        $post_type_object = get_post_type_object('events');
-        $post_type_object->template_lock = 'all';
-        $post_type_object->template = array(
-            array('core/freeform'),
-        );
+        // $post_type_object = get_post_type_object('events');
+        // $post_type_object->template_lock = 'all';
+        // $post_type_object->template = array(
+        //     array('core/freeform'),
+        // );
     }
 
 

@@ -50,14 +50,16 @@
         <div class="filters-container__col2">
           <div class="select-year-container">
             <select
-              aria-label="Select Year"
+              aria-label="{{ this.config.text_strings['Select Year'] }}"
               id="year"
               name="year"
               class="filter-input"
               @change="filterPostsbyYear()"
               v-model="this.selectedYear"
             >
-              <option value="0">Select year</option>
+              <option value="0">
+                {{ this.config.text_strings["Select Year"] }}
+              </option>
               <option v-for="year in years" :key="year" :value="year">
                 {{ year }}
               </option>
@@ -70,7 +72,7 @@
         v-if="this.paginationType != 'loadMore' && total != 0 && !loading"
         class="posts-search__results-info"
       >
-        Showing
+        {{ this.config.text_strings["Showing"] }}
         <span>
           {{ (this.params.page - 1) * this.params.per_page + 1 }}
           -
@@ -78,19 +80,21 @@
             (this.params.page - 1) * this.params.per_page + this.params.per_page
           }}
         </span>
-        of <span> {{ this.total }} </span> results
+        of <span> {{ this.total }} </span>
+        {{ this.config.text_strings["results"] }}
       </div>
 
       <div
         v-if="this.paginationType == 'loadMore' && total != 0 && !loading"
         class="posts-search__results-info"
       >
-        Showing <span>{{ this.total }}</span> results
+        {{ this.config.text_strings["Showing"] }} <span>{{ this.total }}</span>
+        {{ this.config.text_strings["results"] }}
       </div>
     </div>
 
     <div v-if="total == 0 && !loading" class="posts-search__no-results">
-      Sorry, there are no news that match the above criteria.
+      {{ this.config.text_strings["no results message"] }}
     </div>
 
     <TransitionGroup
@@ -108,7 +112,8 @@
                     {{ post.customFields.formatted_date }}
                   </p>
                   <p class="card-details">
-                    {{ post.customFields.mins_read }} 最小阅读量
+                    {{ post.customFields.mins_read }}
+                    {{ this.config.text_strings["min read"] }}
                   </p>
                 </div>
                 <div class="data-container__col2">
@@ -135,7 +140,7 @@
                 v-if="post.customFields.post_link_type == 'internal'"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--arrow-right buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >读</a
+                >{{ this.config.text_strings["read"] }}</a
               >
               <a
                 v-if="post.customFields.post_link_type != 'internal'"
@@ -143,7 +148,7 @@
                 rel="noopener noreferrer"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--external-link buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >读</a
+                >{{ this.config.text_strings["read"] }}</a
               >
             </div>
           </div>
@@ -178,7 +183,7 @@
         @click="getMorePosts"
         class="buttonV2 buttonV2--icon buttonV2--icon--plus"
       >
-        加载更多
+        {{ this.config.text_strings["load more"] }}
       </div>
     </div>
   </div>
@@ -222,6 +227,7 @@ export default {
     };
   },
   mounted() {
+    console.log(this.config.text_strings);
     if (this.config.paginationType) {
       this.paginationType = this.config.paginationType;
       // console.log(this.paginationType);

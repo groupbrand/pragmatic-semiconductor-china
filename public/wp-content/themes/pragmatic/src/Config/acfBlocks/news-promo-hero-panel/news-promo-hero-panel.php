@@ -10,6 +10,11 @@ $right_col_heading = get_field('right_col_heading');
 $right_col_link = get_field('right_col_link');
 $news_article = get_field('news_article');
 
+$static_translations = get_field('static_translations', 'options');
+
+$post_min_read = get_field('post_min_read', 'options');
+$post_read_button = get_field('post_read_button', 'options');
+
 if ($news_article) {
 
     // New Post Info
@@ -58,7 +63,7 @@ if (!$is_preview && $news_article) {
 
                         . '<div class="content-container">'
                         . '<div class="data-container">'
-                        . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' min read</p></div>'
+                        . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' ' . \Theme\Utils::get_static_translation('min read') . '</p></div>'
                         . '<div class="data-container__col2">' . $category_tag . '</div>'
                         . '</div>'
                         . '<a ' . $target . ' href="' . $url . '">'
@@ -74,7 +79,7 @@ if (!$is_preview && $news_article) {
                         echo '<div class="default-image"></div>';
                     }
 
-                    echo '<a ' . $target . 'class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black" href="' . $url . '">Read</a>'
+                    echo '<a ' . $target . 'class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black" href="' . $url . '">' . \Theme\Utils::get_static_translation('Read') . '</a>'
                         . '</div>'
 
                         . '</div>'

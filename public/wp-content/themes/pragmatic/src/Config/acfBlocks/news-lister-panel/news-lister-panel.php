@@ -16,7 +16,8 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
     $config_data = [
         'paginationType' => 'loadMore',
         'keywordSearch' => 'false',
-        'defaultCategoryID' => $category_id
+        'defaultCategoryID' => $category_id,
+        'text_strings' => array('Read' => \Theme\Utils::get_static_translation('Read'), 'Showing' => \Theme\Utils::get_static_translation('Showing'), 'results' => \Theme\Utils::get_static_translation('results'), 'Results' => \Theme\Utils::get_static_translation('Results'), 'min read' => \Theme\Utils::get_static_translation('min read'), 'no results message' => \Theme\Utils::get_static_translation('No results message'), 'load more' => \Theme\Utils::get_static_translation('Load More')),
     ];
 
 ?>

@@ -249,6 +249,20 @@ class Utils
         echo '</div>';
     }
 
+    public static function get_static_translation($needle = '')
+    {
+        $target = '';
+        $static_translations = get_field('static_translations', 'options');
+        if ($static_translations) {
+            $key = array_search($needle, array_column($static_translations, 'source'));
+            if ($key) {
+                $target = $static_translations[$key]['target'];
+            }
+        }
+        return $target;
+    }
+
+
     public static function get_article_card($article, $panel_colour = '')
     {
         $item_date = get_the_date('j. M. Y', $article);
@@ -258,6 +272,10 @@ class Utils
         $mins_read = get_post_meta($article->ID, 'mins_read', true);
         $summary = $article->post_excerpt;
         $image = get_post_thumbnail_id($article->ID);
+
+
+        $post_min_read = \Theme\Utils::get_static_translation('min read');
+        $post_read_button = \Theme\Utils::get_static_translation('Read');
 
         $button_icon_class = ' buttonV2--icon--small--arrow-right ';
         $target = '';
@@ -277,6 +295,7 @@ class Utils
 
         $primary_term =  \Theme\Utils::get_post_primary_term_name('category', $article->ID);
 
+
         $category_tag = '';
         if ($primary_term) {
             $category_tag = '<div class="card-tag">' . $primary_term . '</div>';
@@ -285,14 +304,14 @@ class Utils
         $card_html = '<div class="news-item-container ' . $panel_bg_class . '">'
             . '<div class="content-container">'
             . '<div class="data-container">'
-            . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' ' . __('min read', 'pragmatic') . '</p></div>'
+            . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' ' . __($post_min_read, 'pragmatic') . '</p></div>'
             . '<div class="data-container__col2">' . $category_tag . '</div>'
             . '</div>'
             . '<a href="' . $url . '"><h3 class="card-title">' . $heading . '</h3></a>'
             . '</div>'
             . '<div class="image-container">'
             . \Theme\Utils::get_image_html($image)
-            . '<a ' . $target . ' class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black " href="' . $url . '">' . __('Read', 'pragmatic') . '</a>'
+            . '<a ' . $target . ' class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black " href="' . $url . '">' . __($post_read_button, 'pragmatic') . '</a>'
             . '</div>'
             . '</div>';
 
