@@ -14,6 +14,28 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
     $text_align = get_field('text_align');
     $hide_background_on_mobile = get_field('hide_background_on_mobile');
 
+    // Note: Button is a conditional field and is only completed, if
+    // Text align left white is selected.
+    $button = get_field('button');
+
+    $link_icon_class = 'buttonV2--icon--arrow-right';
+    $button_text = '';
+    $external_link = '';
+    $external_target = '';
+    $link = '';
+
+    if ($button) {
+        $button_text = $button['link_text'];
+        $external_link = isset($button['external_link']) ? $button['external_link'] : false;
+        $link = \Theme\Utils::get_link_url($button['link_url'], $button['link_page']);
+
+        if ($external_link) {
+            $link_icon_class = 'buttonV2--icon--external-link';
+            $external_target = ' target="_blank" rel="noreferrer noopener" ';
+        }
+    }
+
+
     $panel_size_class = "";
     if ($panel_size == 'large') {
         $panel_size_class = "content__brand-moment-panel--large";
@@ -51,6 +73,10 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
 
         if ($text_align == 'left' || $text_align == 'left_white') {
             echo '<h2 class="' . $text_colour_class . '">' . $content . '</h2>';
+
+            if ($button && $button_text != '') {
+                echo '<a class="buttonV2 buttonV2--icon ' . $link_icon_class . ' animate fade-in" ' . $external_target . ' href="' . $link . '">' . $button_text . '</a>';
+            }
         }
 
         echo '</div>';

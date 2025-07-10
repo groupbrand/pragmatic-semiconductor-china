@@ -90,6 +90,28 @@ export default function initSliders() {
     },
   });
 
+  const videoTextSlider = new Swiper(".video-text-slider__slides-wrapper", {
+    modules: [Autoplay, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 100,
+    loop: true,
+    wrapperClass: "video-text-slider__slides",
+    slideClass: "video-text-slider__slide",
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".video-text-slider__pagination",
+      clickable: true,
+      type: "bullets",
+      bulletActiveClass: "video-text-slider__pagination__bullet--active",
+      bulletClass: "video-text-slider__pagination__bullet",
+      bulletElement: "div",
+    },
+    navigation: false,
+  });
+
   const imageSlider = new Swiper(".image-slider__slides-wrapper", {
     modules: [Autoplay],
     slidesPerView: 1,

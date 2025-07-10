@@ -23,7 +23,6 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
 
             <div class="container">
 
-
                 <?php
                 $slides_html = '';
                 $array = [];

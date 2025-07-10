@@ -1,0 +1,237 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pragmatic Semiconductor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 15:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.7.1; php-8.2.0\n"
+"X-Domain: pragmatic"
+
+#: partials/cookie-accept.php:25
+msgid ""
+"<span>Analytics Cookies:</span> Analytical cookies help us to improve our "
+"website by collecting and reporting information on its usage."
+msgstr ""
+
+#: partials/cookie-accept.php:30
+msgid ""
+"<span>Marketing Cookies:</span> We use marketing cookies to help us improve "
+"the relevancy of advertising campaigns you receive."
+msgstr ""
+
+#: partials/cookie-accept.php:34
+msgid "Accept all cookies"
+msgstr ""
+
+#: partials/cookie-accept.php:10
+msgid "Accept cookies"
+msgstr ""
+
+#: src/Config/CustomPosts.php:28
+msgid "Add New"
+msgstr ""
+
+#: src/Config/CustomPosts.php:29
+msgid "Add New Event"
+msgstr ""
+
+#: src/Config/CustomPosts.php:70
+msgid "Add New Event Category"
+msgstr ""
+
+#: src/Config/CustomPosts.php:27
+msgctxt "Add New on Toolbar"
+msgid "Events"
+msgstr ""
+
+#: src/Config/CustomPosts.php:73
+msgid "Add or remove Event Categories"
+msgstr ""
+
+#: src/Config/CustomPosts.php:26
+msgctxt "Admin Menu text"
+msgid "Events"
+msgstr ""
+
+#: src/Config/CustomPosts.php:65
+msgid "All Event Categories"
+msgstr ""
+
+#: src/Config/CustomPosts.php:33
+msgid "All Events"
+msgstr ""
+
+#. Name of the template
+#: buttons.php:3
+msgid "Buttons Page"
+msgstr ""
+
+#: src/Config/CustomPosts.php:74
+msgid "Choose from the most used Event Category"
+msgstr ""
+
+#: partials/cookie-accept.php:35
+msgid "Confirm current selection"
+msgstr ""
+
+#. Name of the template
+#: content-panels-map.php:3
+msgid "Content Panels Map Page"
+msgstr ""
+
+#: src/Config/CustomPosts.php:31
+msgid "Edit Event"
+msgstr ""
+
+#: src/Config/CustomPosts.php:68
+msgid "Edit Event Category"
+msgstr ""
+
+#: src/Config/CustomPosts.php:75
+msgid "Event Categories"
+msgstr ""
+
+#. Name of the template
+#: page-home.php:3
+msgid "Home Page"
+msgstr ""
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "https://leap.london/"
+msgstr ""
+
+#: partials/cookie-accept.php:15
+msgid "Manage cookie settings"
+msgstr ""
+
+#: partials/cookie-accept.php:9
+msgctxt "Manage XXX"
+msgid "Manage cookies"
+msgstr ""
+
+#: partials/cookie-accept.php:18
+msgid ""
+"Necessary cookies enable core functionality. The website cannot function "
+"properly without these cookies, and can only be disabled by changing your "
+"browser preferences."
+msgstr ""
+
+#: partials/cookie-accept.php:17
+msgid "Necessary cookies:"
+msgstr ""
+
+#: src/Config/CustomPosts.php:30
+msgid "New Event"
+msgstr ""
+
+#: src/Config/CustomPosts.php:71
+msgid "New Event Category"
+msgstr ""
+
+#. Author of the theme
+msgid "Nick Morley"
+msgstr ""
+
+#: src/Config/CustomPosts.php:37
+msgid "No events found in Trash."
+msgstr ""
+
+#: src/Config/CustomPosts.php:36
+msgid "No events found."
+msgstr ""
+
+#: partials/cookie-accept.php:20
+msgid "Optional cookies:"
+msgstr ""
+
+#: src/Config/CustomPosts.php:35
+msgid "Parent Event:"
+msgstr ""
+
+#: src/Config/CustomPosts.php:64
+msgid "Popular Event Categories"
+msgstr ""
+
+#: src/Config/CustomPosts.php:24
+msgctxt "Post type general name"
+msgid "Events"
+msgstr ""
+
+#: src/Config/CustomPosts.php:25
+msgctxt "Post type singular name"
+msgid "Event"
+msgstr ""
+
+#. Name of the theme
+msgid "Pragmatic Semiconductor"
+msgstr ""
+
+#: src/Config/CustomPosts.php:63
+msgid "Search Event Categories"
+msgstr ""
+
+#: src/Config/CustomPosts.php:34
+msgid "Search Events"
+msgstr ""
+
+#. Name of the template
+#: page-search.php:3
+msgid "Search Page"
+msgstr ""
+
+#: src/Config/CustomPosts.php:72
+msgid "Separate Event Categories with commas"
+msgstr ""
+
+#: partials/cookie-accept.php:6
+msgid ""
+"Some of these cookies are essential, while others help us to improve your "
+"experience by providing insights into how the site is being used. For more "
+"information visit our <a href=\"/privacy-policy/\">privacy and cookie "
+"policy</a>."
+msgstr ""
+
+#: src/Config/CustomPosts.php:61
+msgctxt "taxonomy general name"
+msgid "Event Categories"
+msgstr ""
+
+#: src/Config/CustomPosts.php:62
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr ""
+
+#: src/Config/CustomPosts.php:69
+msgid "Update Event Category"
+msgstr ""
+
+#: src/Config/CustomPosts.php:32
+msgid "View Events"
+msgstr ""
+
+#: partials/cookie-accept.php:4
+msgid "We respect your privacy"
+msgstr ""
+
+#: partials/cookie-accept.php:21
+msgid ""
+"We'd also like to use cookies to provide optional features, improve our "
+"website and support our marketing."
+msgstr ""
+
+msgid "Read"
+msgstr ""
+
+msgctxt "READING TEXTX"
+msgid "Reading Text"
+msgstr ""

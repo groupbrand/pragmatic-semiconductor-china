@@ -1,5 +1,5 @@
 <div class="footer-socials">
-    <h3 class="footer-heading">Stay connected</h3>
+    <h3 class="footer-heading">保持联系</h3>
 
     <ul class="footer-socials__menu">
 

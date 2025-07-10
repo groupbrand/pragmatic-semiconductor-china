@@ -108,7 +108,7 @@
                     {{ post.customFields.formatted_date }}
                   </p>
                   <p class="card-details">
-                    {{ post.customFields.mins_read }} min read
+                    {{ post.customFields.mins_read }} 最小阅读量
                   </p>
                 </div>
                 <div class="data-container__col2">
@@ -135,7 +135,7 @@
                 v-if="post.customFields.post_link_type == 'internal'"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--arrow-right buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >Read</a
+                >读</a
               >
               <a
                 v-if="post.customFields.post_link_type != 'internal'"
@@ -143,7 +143,7 @@
                 rel="noopener noreferrer"
                 class="buttonV2 buttonV2--icon buttonV2--icon--small buttonV2--icon--small--external-link buttonV2--yellow-black-important"
                 :href="post.customFields.post_link"
-                >Read</a
+                >读</a
               >
             </div>
           </div>
@@ -178,7 +178,7 @@
         @click="getMorePosts"
         class="buttonV2 buttonV2--icon buttonV2--icon--plus"
       >
-        Load more
+        加载更多
       </div>
     </div>
   </div>

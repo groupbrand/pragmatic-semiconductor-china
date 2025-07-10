@@ -59,6 +59,7 @@ class ACFBlocks
         register_block_type(__DIR__ . '/acfBlocks/media-content-small-panel');
         register_block_type(__DIR__ . '/acfBlocks/three-column-stats-panel');
         register_block_type(__DIR__ . '/acfBlocks/slider-panel');
+        register_block_type(__DIR__ . '/acfBlocks/slider-video-text-panel');
         register_block_type(__DIR__ . '/acfBlocks/resource-panel');
         register_block_type(__DIR__ . '/acfBlocks/narrow-content-panel');
         register_block_type(__DIR__ . '/acfBlocks/resource-downloads-panel');
@@ -128,6 +129,7 @@ class ACFBlocks
                     'acf/media-content-panel',
                     'acf/three-column-stats-panel',
                     'acf/slider-panel',
+                    'acf/slider-video-text-panel',
                     'acf/resource-panel',
                     'acf/narrow-content-panel',
                     'acf/resource-downloads-panel',

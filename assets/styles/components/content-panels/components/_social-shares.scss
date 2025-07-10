@@ -28,6 +28,17 @@
         transition: opacity 0.2s ease-out;
       }
 
+      &--wechat {
+        &::before {
+          width: 19px;
+          height: 19px;
+          background-image: url("../images/icons/social/icon-linkedin.svg");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+
       &--linkedin {
         &::before {
           width: 19px;

@@ -264,6 +264,20 @@
           }
         }
 
+        &--wechat {
+          &::before {
+            mask-image: url("../images/icons/social/icon-wechat.svg");
+
+            width: 25px;
+            height: 25px;
+
+            @include bp(lap) {
+              width: 19px;
+              height: 19px;
+            }
+          }
+        }
+
         &--linkedin {
           &::before {
             mask-image: url("../images/icons/social/icon-linkedin.svg");

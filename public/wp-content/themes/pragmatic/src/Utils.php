@@ -36,6 +36,16 @@ class Utils
         return $heading;
     }
 
+    public static function getTrimmedCharHeading($heading)
+    {
+
+        if ($heading) {
+            $heading =  mb_substr($heading, 0, 100, "utf-8");
+        }
+
+        return $heading;
+    }
+
     public static function get_image_html($image_id, $sizes = 1): string
     {
         if ($image_id === 0) {
@@ -242,7 +252,8 @@ class Utils
     public static function get_article_card($article, $panel_colour = '')
     {
         $item_date = get_the_date('j. M. Y', $article);
-        $heading = \Theme\Utils::getTrimmedHeading($article->post_title);
+        //$heading = \Theme\Utils::getTrimmedHeading($article->post_title);
+        $heading = \Theme\Utils::getTrimmedCharHeading($article->post_title);
         $external_url_link = get_post_meta($article->ID, 'external_url_link', true);
         $mins_read = get_post_meta($article->ID, 'mins_read', true);
         $summary = $article->post_excerpt;
@@ -274,14 +285,14 @@ class Utils
         $card_html = '<div class="news-item-container ' . $panel_bg_class . '">'
             . '<div class="content-container">'
             . '<div class="data-container">'
-            . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' min read</p></div>'
+            . '<div class="data-container__col1"><p class="card-details">' . $item_date . '</p><p class="card-details">' . $mins_read . ' ' . __('min read', 'pragmatic') . '</p></div>'
             . '<div class="data-container__col2">' . $category_tag . '</div>'
             . '</div>'
             . '<a href="' . $url . '"><h3 class="card-title">' . $heading . '</h3></a>'
             . '</div>'
             . '<div class="image-container">'
             . \Theme\Utils::get_image_html($image)
-            . '<a ' . $target . ' class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black " href="' . $url . '">Read</a>'
+            . '<a ' . $target . ' class="buttonV2 buttonV2--icon buttonV2--icon--small ' . $button_icon_class . ' buttonV2--yellow-black " href="' . $url . '">' . __('Read', 'pragmatic') . '</a>'
             . '</div>'
             . '</div>';
 

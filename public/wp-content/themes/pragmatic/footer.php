@@ -20,7 +20,7 @@ $footer_copyright_message = get_field('copyright_message', 'options');
             ?>
             <div class="newsletter-signup">
                 <h3 class="footer-heading {">
-                    <?php _e('Sign up to our newsletter'); ?>
+                    <?php _e('订阅我们的时事通讯'); ?>
                 </h3>
 
                 <script src="https://js.hsforms.net/forms/embed/4398349.js" defer></script>
@@ -29,7 +29,7 @@ $footer_copyright_message = get_field('copyright_message', 'options');
 
             </div>
 
-            <div class="page-footer__btn-container" aria-label="Back to Top">
+            <div class="page-footer__btn-container" aria-label="返回顶部">
                 <a class="circle-buttonV2 circle-buttonV2--arrow-up circle-buttonV2--black-back-fwhite-icon-yellow-hover" href="#scroll-to-top"></a>
             </div>
 
@@ -56,7 +56,7 @@ $footer_copyright_message = get_field('copyright_message', 'options');
 
                 <div class="copyright-container__col2">
 
-                    <div class="btn-container-mobile" aria-label="Back to Top">
+                    <div class="btn-container-mobile" aria-label="返回顶部">
                         <a class="circle-buttonV2 circle-buttonv2--arrow-up circle-buttonV2--black-back-fwhite-icon-yellow-hover" href="#scroll-to-top"></a>
                     </div>
                 </div>
