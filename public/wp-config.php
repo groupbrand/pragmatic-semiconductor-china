@@ -55,14 +55,14 @@ define('DB_USER', getenv_docker('WORDPRESS_DB_USER', 'root'));
 define('DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'root'));
 
 // Leap Staging
-// define('DB_NAME', getenv_docker('WORDPRESS_DB_NAME', 'dbhwgelrgvw0ww'));
-// define('DB_USER', getenv_docker('WORDPRESS_DB_USER', 'urj8nqp4fbjcv'));
-// define('DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'k50eaoa2i4no'));
+// define('DB_NAME', getenv_docker('WORDPRESS_DB_NAME', 'dbuef9bkzimoyg'));
+// define('DB_USER', getenv_docker('WORDPRESS_DB_USER', 'uvajazwvddnrv'));
+// define('DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'sx9xyaijkvn7'));
 
 // Pragmatic Staging
-// define('DB_NAME', 'dbkmu8xefkwtg8');
-// define('DB_USER', 'uwpiykfof18m3');
-// define('DB_PASSWORD', '0smkdw1grtjv');
+// define('DB_NAME', 'db44dju79e5e9n');
+// define('DB_USER', 'uaiccpkrizlgl');
+// define('DB_PASSWORD', 'igbjaercow5z');
 
 // Pragamatic Live
 // define('DB_NAME', 'dbphw7ffpv0uga');

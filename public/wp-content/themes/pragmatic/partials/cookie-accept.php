@@ -1,4 +1,4 @@
-<dialog id="cookie-accept" class="cookie-accept">
+<!-- <dialog id="cookie-accept" class="cookie-accept">
     <div class="cookie-accept__container cookie-accept__preface">
         <div class="cookie-accept__content">
             <h3><?php _e('We respect your privacy', 'pragmatic'); ?></h3>
@@ -33,6 +33,48 @@
         <div class="cookie-accept__controls">
             <button class="cookie-accept__button cookie-accept__accept-cookies-button"><?php _e('Accept all cookies', 'pragmatic'); ?></button>
             <button class="cookie-accept__button cookie-accept__confirm-selection-button"><?php _e('Confirm current selection', 'pragmatic'); ?></button>
+        </div>
+    </div>
+</dialog> -->
+
+<?php
+$confirm_page = get_field('confirm_page', 'options');
+$manage_page = get_field('manage_page', 'options');
+?>
+
+<dialog id="cookie-accept" class="cookie-accept">
+    <div class="cookie-accept__container cookie-accept__preface">
+        <div class="cookie-accept__content">
+            <h3><?php echo $confirm_page['heading'] ?></h3>
+            <p><?php echo $confirm_page['content'] ?></p>
+        </div>
+        <div class="cookie-accept__controls">
+            <button class="cookie-accept__button cookie-accept__manage-button"><?php echo $confirm_page['manage_button'] ?></button>
+            <button class="cookie-accept__button cookie-accept__accept-cookies-button"><?php echo $confirm_page['accept_button'] ?></button>
+        </div>
+    </div>
+    <div class="cookie-accept__container cookie-accept__manage">
+        <div class="cookie-accept__content">
+            <h3><?php echo $manage_page['heading'] ?></h3>
+
+            <h4><?php echo $manage_page['necessary_heading'] ?></h4>
+            <p><?php echo $manage_page['necessary_content'] ?></p>
+
+            <h4><?php echo $manage_page['optional_heading'] ?></h4>
+
+            <div class="cookie-accept__checkbox-group">
+                <input id="cookie-accept-enable-analytics" type="checkbox" name="cookie-accept-enable-analytics">
+                <label for="cookie-accept-enable-analytics"><?php echo $manage_page['analytics_content'] ?></label>
+            </div>
+
+            <div class="cookie-accept__checkbox-group">
+                <input id="cookie-accept-enable-marketing" type="checkbox" name="cookie-accept-enable-marketing">
+                <label for="cookie-accept-enable-marketing"><?php echo $manage_page['marketing_content'] ?></label>
+            </div>
+        </div>
+        <div class="cookie-accept__controls">
+            <button class="cookie-accept__button cookie-accept__confirm-selection-button"><?php echo $manage_page['confirm_button'] ?></button>
+            <button class="cookie-accept__button cookie-accept__accept-cookies-button"><?php echo $manage_page['accept_button'] ?></button>
         </div>
     </div>
 </dialog>

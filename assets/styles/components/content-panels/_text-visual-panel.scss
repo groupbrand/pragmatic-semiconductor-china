@@ -51,6 +51,21 @@
           margin: 0 0 40px;
         }
       }
+
+      a.buttonV2 {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include bp(lap) {
+          margin-bottom: initial;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 }

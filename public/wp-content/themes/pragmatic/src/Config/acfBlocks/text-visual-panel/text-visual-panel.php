@@ -8,19 +8,22 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
     $meta_heading = get_field('meta_heading');
     $heading = get_field('heading');
     $description = get_field('description_text');
-    $button = get_field('button');
-    $link_text = $button['link_text'];
-    $link_url = $button['link_url'];
-    $link_page = $button['link_page'];
-    $external_link = isset($button['external_link']) ? $button['external_link'] : false;
-    $link = \Theme\Utils::get_link_url($link_url, $link_page);
+    $buttons = get_field('buttons');
 
-    $link_icon_class = 'buttonV2--icon--arrow-right';
-    $external_target = '';
-    if ($external_link) {
-        $link_icon_class = 'buttonV2--icon--external-link';
-        $external_target = ' target="_blank" rel="noreferrer noopener" ';
-    }
+    // $button = get_field('button');
+    // $link_text = $button['link_text'];
+    // $link_url = $button['link_url'];
+    // $link_page = $button['link_page'];
+    // $external_link = isset($button['external_link']) ? $button['external_link'] : false;
+    // $link = \Theme\Utils::get_link_url($link_url, $link_page);
+
+    // $link_icon_class = 'buttonV2--icon--arrow-right';
+    // $external_target = '';
+    // if ($external_link) {
+    //     $link_icon_class = 'buttonV2--icon--external-link';
+    //     $external_target = ' target="_blank" rel="noreferrer noopener" ';
+    // }
+
 
 ?>
 
@@ -35,13 +38,31 @@ if (!$is_preview && !$generic_block_settings['hide_panel']) {
                     <h2 class="meta-heading"><?php echo $meta_heading; ?></h2>
                     <h3 class="section-title-small"><?php echo $heading; ?></h3>
                     <p class="description"><?php echo $description; ?></p>
-                    <?php if ($link && $link_text) { ?>
-                        <?php
-                        echo '<a class="buttonV2 buttonV2--icon ' . $link_icon_class . ' animate fade-in" ' . $external_target . ' href="' . $link . '">' . $link_text . '</a>';
-                        ?>
 
+                    <?php
+                    if (!empty($buttons)) {
+                        foreach ($buttons as $button) {
+                            $button = $button['button'];
+                            $link_text = $button['link_text'] ?? '';
+                            $link_url = $button['link_url'] ?? '';
+                            $link_page = $button['link_page'] ?? '';
+                            $external_link = $button['external_link'] ?? false;
 
-                    <?php } ?>
+                            $link = \Theme\Utils::get_link_url($link_url, $link_page);
+
+                            $link_icon_class = 'buttonV2--icon--arrow-right';
+                            $external_target = '';
+                            if ($external_link) {
+                                $link_icon_class = 'buttonV2--icon--external-link';
+                                $external_target = ' target="_blank" rel="noreferrer noopener" ';
+                            }
+
+                            if ($link && $link_text) {
+                                echo '<a class="buttonV2 buttonV2--icon ' . $link_icon_class . ' animate fade-in" ' . $external_target . ' href="' . $link . '">' . $link_text . '</a>';
+                            }
+                        }
+                    }
+                    ?>
 
                 </div>
 
