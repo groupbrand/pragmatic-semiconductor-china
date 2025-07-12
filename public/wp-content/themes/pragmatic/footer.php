@@ -20,7 +20,7 @@ $footer_copyright_message = get_field('copyright_message', 'options');
             ?>
             <div class="newsletter-signup">
                 <h3 class="footer-heading {">
-                    <?php _e('訂閱我們的電子報'); ?>
+                    <?php echo \Theme\Utils::get_static_translation('Sign up to our newsletter') ?: 'Sign up to our newsletter'; ?>
                 </h3>
 
                 <script src="https://js.hsforms.net/forms/embed/4398349.js" defer></script>

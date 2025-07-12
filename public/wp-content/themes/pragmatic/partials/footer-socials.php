@@ -1,5 +1,5 @@
 <div class="footer-socials">
-    <h3 class="footer-heading">保持聯繫</h3>
+    <h3 class="footer-heading"><?php echo \Theme\Utils::get_static_translation('Stay connected') ?: 'Stay connected'; ?></h3>
 
     <ul class="footer-socials__menu">
 

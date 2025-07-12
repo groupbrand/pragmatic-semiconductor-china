@@ -80,8 +80,11 @@
                 </div>
 
                 <div class="header-container__col3">
-                    <a class="buttonV2 buttonV2--yellow-contact" href="/contact/">Contact</a>
-                    <a class="global-site-button" href="<?php echo get_field('global_site_url', 'options'); ?>">Global site</a>
+                    <a class="buttonV2 buttonV2--yellow-contact" href="/contact/"> <?php echo \Theme\Utils::get_static_translation('Contact') ?: 'Contact'; ?>
+
+                    </a>
+                    <a class="global-site-button" href="<?php echo get_field('global_site_url', 'options'); ?>"> <?php echo \Theme\Utils::get_static_translation('Global site') ?: 'Global site'; ?>
+                    </a>
                 </div>
 
                 <div class=" mobile-menu-toggle">
