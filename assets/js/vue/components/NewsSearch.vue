@@ -34,7 +34,7 @@
                 :class="0 == this.selectedCategories ? 'active' : ''"
                 @click="filterPosts(0)"
               >
-                All
+                全部
               </div>
             </li>
             <li v-for="category in categories" :key="category.id">
@@ -58,7 +58,7 @@
               v-model="this.selectedYear"
             >
               <option value="0">
-                {{ this.config.text_strings["Select Year"] }}
+                {{ config.text_strings["Select Year"] || "選擇年份" }}
               </option>
               <option v-for="year in years" :key="year" :value="year">
                 {{ year }}

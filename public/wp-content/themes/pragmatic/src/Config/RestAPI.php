@@ -10,7 +10,7 @@ class RestAPI
     {
         add_filter('rest_api_init', [self::class, 'registerCustomRestFields']);
         add_filter('rest_api_init', [self::class, 'registerCustomRestRoutes']);
-        add_filter('rest_prepare_post', [self::class, 'trimHeading'], 10, 3);
+        // add_filter('rest_prepare_post', [self::class, 'trimHeading'], 10, 3);
         add_filter('rest_prepare_post', [self::class, 'removeTitleHTMLEntities'], 10, 3);
         add_filter('rest_events_collection_params', [self::class, 'filter_add_rest_orderby_params'], 10, 1);
         add_filter('rest_post_query', [self::class, 'filter_post_year_params'], 10, 2);

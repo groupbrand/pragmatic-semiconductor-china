@@ -20,7 +20,7 @@ if ($news_article) {
     // New Post Info
     $item_date = get_the_date('j. M. Y', $news_article);
     $external_url_link = get_post_meta($news_article->ID, 'external_url_link', true);
-    $heading = \Theme\Utils::getTrimmedHeading($news_article->post_title);
+    $heading = $news_article->post_title;
     $mins_read = get_post_meta($news_article->ID, 'mins_read', true);
     $summary = $news_article->post_excerpt;
     $image = get_post_thumbnail_id($news_article->ID);
@@ -67,7 +67,7 @@ if (!$is_preview && $news_article) {
                         . '<div class="data-container__col2">' . $category_tag . '</div>'
                         . '</div>'
                         . '<a ' . $target . ' href="' . $url . '">'
-                        . '<h3 class="card-title">' . \Theme\Utils::getTrimmedHeading($heading) . '</h3>'
+                        . '<h3 class="card-title">' . ($heading) . '</h3>'
                         . '</a>'
                         . '</div>'
 

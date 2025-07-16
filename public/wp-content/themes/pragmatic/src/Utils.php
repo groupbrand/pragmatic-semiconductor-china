@@ -255,7 +255,7 @@ class Utils
         $static_translations = get_field('static_translations', 'options');
         if ($static_translations) {
             $key = array_search($needle, array_column($static_translations, 'source'));
-            if ($key) {
+            if ($key !== false) {
                 $target = $static_translations[$key]['target'];
             }
         }

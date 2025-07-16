@@ -53,7 +53,7 @@
                             <div class="site-header-logo"></div>
                         </a>
 
-                        <a class="buttonV2 buttonV2--yellow" href="/contact/">Contact</a>
+                        <a class="buttonV2 buttonV2--yellow" href="/contact/"><?php echo \Theme\Utils::get_static_translation('Contact') ?: 'Contact'; ?></a>
 
                         <ul>
                             <?php
