@@ -23,8 +23,9 @@ $footer_copyright_message = get_field('copyright_message', 'options');
                     <?php echo \Theme\Utils::get_static_translation('Sign up to our newsletter') ?: 'Sign up to our newsletter'; ?>
                 </h3>
 
-                <script src="https://js.hsforms.net/forms/embed/4398349.js" defer></script>
-                <div class="hs-form-frame" data-region="na1" data-form-id="b7697bde-40e0-470b-b82a-b40a74083246" data-portal-id="4398349"></div>
+                <script src=https://js.hsforms.net/forms/embed/4398349.js defer></script>
+
+                <div class="hs-form-frame" data-region="na1" data-form-id="3bf8b5cf-41ba-4e16-b7e6-c26bd297088b" data-portal-id="4398349"></div>
 
 
             </div>
