@@ -21,9 +21,9 @@ while (have_posts()) {
     $post_min_label = \Theme\Utils::get_static_translation('min');
     $post_share_label = \Theme\Utils::get_static_translation('Share');
     $post_published_label = \Theme\Utils::get_static_translation('Published');
+    $post_author_label = \Theme\Utils::get_static_translation('Author');
     $post_back_to_news_link_label = \Theme\Utils::get_static_translation('Back to news');
     $post_more_from_pragmatic_heading = \Theme\Utils::get_static_translation('More from Pragmatic');
-
 
     $author_details = '';
     if ($author) {
@@ -85,7 +85,7 @@ while (have_posts()) {
             <p class="summary-details"><?php echo $item_date; ?></p>
 
             <?php if ($author_details) { ?>
-                <h3 class="label">><?php echo $post_author_label; ?></h3>
+                <h3 class="label"><?php echo $post_author_label; ?></h3>
                 <p class="summary-details"><?php echo $author_details; ?></p>
             <?php } ?>
 
